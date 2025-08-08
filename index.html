@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exzazon - ডিজিটাল মার্কেটিং সলিউশন</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Barlow Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "brand-orange": "#FF6A00",
+              "brand-dark": "#202124",
+              "brand-light": "#F8F9FA",
+              "brand-accent": "#FF8C42",
+              "brand-secondary": "#4A5568",
+              "brand-btn": "#F15F1F",
+              "brand-blue": "#1168FF",
+            },
+            fontFamily: {
+              barlow: ["Barlow", "sans-serif"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom animations and styles */
+      .gradient-bg {
+        background: linear-gradient(135deg, #f15f1f 0%, #ff6a00 100%);
+      }
+      .text-gradient {
+        background: linear-gradient(90deg, #ff6a00, #f15f1f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .hero-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6A00' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .service-icon {
+        transition: all 0.3s ease;
+      }
+      .service-card:hover .service-icon {
+        transform: scale(1.2) rotate(5deg);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background-color: #ff6a00;
+        transition: all 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      .loader {
+        border-top-color: #ff6a00;
+        -webkit-animation: spinner 1.5s linear infinite;
+        animation: spinner 1.5s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Dark mode styles */
+      .dark body {
+        background-color: #202124;
+        color: #e0e0e0;
+      }
+      .dark .bg-white {
+        background-color: #2d2d30 !important;
+      }
+      .dark .text-brand-dark {
+        color: #e0e0e0 !important;
+      }
+      .dark .bg-brand-light {
+        background-color: #2d2d30 !important;
+      }
+      .dark .text-brand-secondary {
+        color: #b0b0b0 !important;
+      }
+      .dark .border-gray-300 {
+        border-color: #444 !important;
+      }
+      .dark .bg-gray-50 {
+        background-color: #2d2d30 !important;
+      }
+      .dark .header-bg {
+        background-color: rgba(32, 33, 36, 0.95) !important;
+      }
+      .dark .mobile-menu {
+        background-color: #2d2d30 !important;
+      }
+      .dark .testimonial-card {
+        background-color: #2d2d30 !important;
+      }
+      .dark .footer-bg {
+        background-color: #202124 !important;
+      }
+      .dark .hero-text {
+        color: #ffffff !important;
+      }
+      .light .hero-text {
+        color: #202124 !important;
+      }
+      .dark .service-card {
+        background-color: #2d2d30 !important;
+      }
+      .dark .process-step {
+        background-color: #2d2d30 !important;
+      }
+      .dark .contact-form {
+        background-color: #2d2d30 !important;
+      }
+      .dark input,
+      .dark textarea {
+        background-color: #3d3d42 !important;
+        color: #e0e0e0 !important;
+        border-color: #444 !important;
+      }
+      .dark input::placeholder,
+      .dark textarea::placeholder {
+        color: #b0b0b0 !important;
+      }
+
+      /* Responsive improvements */
+      @media (max-width: 768px) {
+        .hero-section {
+          padding-top: 5rem;
+          padding-bottom: 3rem;
+        }
+
+        .hero-title {
+          font-size: 2rem !important;
+          line-height: 1.2;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem !important;
+        }
+
+        .section-title {
+          font-size: 1.8rem !important;
+        }
+
+        .service-card {
+          margin-bottom: 1.5rem;
+        }
+
+        .process-step {
+          padding: 1rem;
+        }
+
+        .testimonial-card {
+          margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+          margin-bottom: 2rem;
+        }
+
+        .mobile-menu {
+          transition: all 0.3s ease;
+          max-height: 0;
+          overflow: hidden;
+        }
+
+        .mobile-menu:not(.hidden) {
+          max-height: 300px;
+        }
+      }
+
+      /* Color adjustments */
+      .btn-primary {
+        background-color: #f15f1f;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #ff6a00;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #1168ff;
+        border: 2px solid #1168ff;
+      }
+
+      .btn-secondary:hover {
+        background-color: #1168ff;
+        color: white;
+      }
+
+      .dark .btn-secondary {
+        color: #4d94ff;
+        border-color: #4d94ff;
+      }
+
+      .dark .btn-secondary:hover {
+        background-color: #4d94ff;
+        color: white;
+      }
+
+      .dark .theme-menu {
+        background-color: #2d2d30 !important;
+      }
+
+      .dark .theme-menu button {
+        color: #e0e0e0;
+      }
+
+      .dark .theme-menu button:hover {
+        background-color: #3d3d42;
+      }
+    </style>
+  </head>
+  <body
+    class="font-barlow text-brand-dark bg-brand-light overflow-x-hidden transition-colors duration-300"
+  >
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed hidden inset-0 bg-white z-50 flex items-center justify-center"
+    >
+      <div
+        class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"
+      ></div>
+    </div>
+    <!-- Theme & Language Switchers -->
+    <div
+      class="fixed top-20 right-6 z-50 flex flex-col items-center justify-between space-y-3"
+    >
+      <!-- Theme Switcher -->
+      <div class="relative">
+        <button
+          id="themeToggle"
+          class="bg-brand-orange text-white w-12 h-12 rounded-full shadow-lg hover:bg-brand-accent transition-all duration-300 flex items-center justify-center"
+        >
+          <i id="themeIcon" class="fas fa-sun"></i>
+        </button>
+        <div
+          id="themeMenu"
+          class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 hidden theme-menu transition-colors duration-300"
+        >
+          <button
+            id="lightMode"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
+          >
+            <i class="fas fa-sun mr-2"></i> লাইট মোড
+          </button>
+          <button
+            id="darkMode"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
+          >
+            <i class="fas fa-moon mr-2"></i> ডার্ক মোড
+          </button>
+          <button
+            id="systemMode"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
+          >
+            <i class="fas fa-desktop mr-2"></i> সিস্টেম মোড
+          </button>
+        </div>
+      </div>
+      <!-- Language Switcher -->
+      <button
+        id="langToggle"
+        class="bg-brand-btn text-white px-4 py-2 rounded-full shadow-lg hover:bg-brand-accent transition-all duration-300 flex items-center space-x-2"
+      >
+        <span id="langText">BN</span>
+        <i class="fas fa-globe"></i>
+      </button>
+    </div>
+    <!-- Header -->
+    <!-- Header -->
+    <header
+      id="header"
+      class="fixed w-full top-0 z-40 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm header-bg transition-all duration-300 transform"
+    >
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-3">
+            <!-- Logo with animation -->
+            <div
+              class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center animate-pulse-slow transition-all duration-300 hover:scale-110"
+            >
+              <i class="fas fa-bolt text-white text-xl"></i>
+            </div>
+            <span
+              class="text-2xl font-bold text-gradient transition-all duration-300 hover:scale-105"
+              >Exzazon</span
+            >
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-1">
+            <a
+              href="#home"
+              class="nav-link px-4 py-2 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300 relative group"
+            >
+              <span>হোম</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#about"
+              class="nav-link px-4 py-2 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300 relative group"
+            >
+              <span>আমাদের সম্পর্কে</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#services"
+              class="nav-link px-4 py-2 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300 relative group"
+            >
+              <span>সেবাসমূহ</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#process"
+              class="nav-link px-4 py-2 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300 relative group"
+            >
+              <span>প্রক্রিয়া</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#contact"
+              class="nav-link px-4 py-2 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300 relative group"
+            >
+              <span>যোগাযোগ</span>
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+
+            <!-- CTA Button -->
+            <button
+              class="ml-4 bg-brand-orange text-white px-5 py-2 rounded-full font-medium hover:bg-brand-btn transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+            >
+              কাজ শুরু করুন
+            </button>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobileMenuBtn"
+            class="md:hidden text-brand-dark p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+          >
+            <i
+              class="fas fa-bars text-2xl transition-transform duration-300"
+              id="menuIcon"
+            ></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white py-4 px-4 shadow-lg mobile-menu transition-all duration-300 transform origin-top"
+      >
+        <div class="flex flex-col space-y-2">
+          <a
+            href="#home"
+            class="mobile-nav-link flex items-center py-3 px-4 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300"
+          >
+            <i class="fas fa-home mr-3 text-brand-orange"></i>
+            <span>হোম</span>
+          </a>
+          <a
+            href="#about"
+            class="mobile-nav-link flex items-center py-3 px-4 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300"
+          >
+            <i class="fas fa-info-circle mr-3 text-brand-orange"></i>
+            <span>আমাদের সম্পর্কে</span>
+          </a>
+          <a
+            href="#services"
+            class="mobile-nav-link flex items-center py-3 px-4 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300"
+          >
+            <i class="fas fa-concierge-bell mr-3 text-brand-orange"></i>
+            <span>সেবাসমূহ</span>
+          </a>
+          <a
+            href="#process"
+            class="mobile-nav-link flex items-center py-3 px-4 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300"
+          >
+            <i class="fas fa-tasks mr-3 text-brand-orange"></i>
+            <span>প্রক্রিয়া</span>
+          </a>
+          <a
+            href="#contact"
+            class="mobile-nav-link flex items-center py-3 px-4 rounded-lg hover:bg-brand-orange hover:bg-opacity-10 transition-all duration-300"
+          >
+            <i class="fas fa-envelope mr-3 text-brand-orange"></i>
+            <span>যোগাযোগ</span>
+          </a>
+
+          <!-- Mobile CTA Button -->
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-24 pb-20 md:pt-32 md:pb-28 gradient-bg hero-pattern hero-section relative overflow-hidden"
+    >
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-brand-blue bg-opacity-10 rounded-full animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-orange bg-opacity-10 rounded-full animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute top-1/4 left-1/4 w-4 h-4 bg-white bg-opacity-30 rounded-full animate-bounce"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/3 w-3 h-3 bg-white bg-opacity-30 rounded-full animate-bounce"
+          style="animation-delay: 0.5s"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-1/3 w-5 h-5 bg-white bg-opacity-30 rounded-full animate-bounce"
+          style="animation-delay: 1s"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+            <div
+              class="mb-4 inline-block px-3 py-1 bg-white bg-opacity-20 rounded-full"
+            >
+              <p class="text-white text-sm font-medium flex items-center">
+                <i class="fas fa-star text-yellow-300 mr-2"></i>
+                রাজশাহীর সেরা ডিজিটাল মার্কেটিং এজেন্সি
+              </p>
+            </div>
+            <h1
+              class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-[#ff6a00] hero-title"
+            >
+              আপনার ব্যবসার
+              <span class="text-[#1168ff] relative">
+                প্রবৃদ্ধি
+                <svg
+                  class="absolute -bottom-2 left-0 w-full"
+                  viewBox="0 0 200 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,5 C25,2 50,8 75,5 C100,2 125,8 150,5 C175,2 200,5 200,5"
+                    stroke="#1168ff"
+                    stroke-width="3"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              শুরু করুন
+            </h1>
+            <p
+              class="text-xl text-white text-opacity-90 mb-8 max-w-lg hero-text hero-subtitle"
+            >
+              পারফরম্যান্স-ভিত্তিক ডিজিটাল মার্কেটিং সলিউশন যা ফলাফল নিশ্চিত করে
+            </p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-white">200+</div>
+                <div class="text-sm text-white text-opacity-80">
+                  সন্তুষ্ট ক্লায়েন্ট
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-white">95%</div>
+                <div class="text-sm text-white text-opacity-80">সফলতার হার</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-white">3x</div>
+                <div class="text-sm text-white text-opacity-80">গড় বৃদ্ধি</div>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="btn-primary bg-white text-[#ff6a00] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-brand-light transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+              >
+                কাজ শুরু করুন
+                <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+              <button
+                class="btn-secondary border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#ff6a00] transition-all duration-300 flex items-center justify-center"
+              >
+                আরও জানুন
+                <i class="fas fa-play-circle ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="md:w-1/2 flex justify-center"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="relative">
+              <!-- Main growth chart -->
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 bg-white bg-opacity-20 rounded-full flex items-center justify-center animate-float relative"
+              >
+                <div
+                  class="w-48 h-48 md:w-60 md:h-60 bg-[#1168ff] bg-opacity-30 rounded-full flex items-center justify-center backdrop-blur-sm"
+                >
+                  <!-- Growth chart icon -->
+                  <div class="relative">
+                    <svg
+                      class="w-32 h-32 md:w-40 md:h-40"
+                      viewBox="0 0 100 100"
+                    >
+                      <!-- Chart background -->
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        fill="none"
+                        stroke="rgba(255,255,255,0.2)"
+                        stroke-width="2"
+                      />
+
+                      <!-- Animated growth line -->
+                      <path
+                        d="M20,80 Q35,60 50,40 T80,20"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                      >
+                        <animate
+                          attributeName="stroke-dasharray"
+                          from="0 200"
+                          to="200 0"
+                          dur="2s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+
+                      <!-- Animated dots -->
+                      <circle cx="20" cy="80" r="4" fill="white">
+                        <animate
+                          attributeName="cy"
+                          values="80;75;80"
+                          dur="2s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                      <circle cx="50" cy="40" r="4" fill="white">
+                        <animate
+                          attributeName="cy"
+                          values="40;35;40"
+                          dur="2s"
+                          begin="0.5s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                      <circle cx="80" cy="20" r="4" fill="white">
+                        <animate
+                          attributeName="cy"
+                          values="20;15;20"
+                          dur="2s"
+                          begin="1s"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+
+                      <!-- Growth percentage -->
+                      <text
+                        x="50"
+                        y="55"
+                        text-anchor="middle"
+                        fill="white"
+                        font-size="12"
+                        font-weight="bold"
+                      >
+                        +300%
+                      </text>
+                    </svg>
+
+                    <!-- Center icon -->
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div
+                        class="w-16 h-16 bg-white bg-opacity-30 rounded-full flex items-center justify-center backdrop-blur-sm"
+                      >
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating elements -->
+              <div
+                class="absolute -top-4 -right-4 w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center animate-pulse-slow shadow-lg"
+              >
+                <i class="fas fa-rocket text-white text-xl"></i>
+              </div>
+              <div
+                class="absolute -bottom-4 -left-4 w-16 h-16 bg-brand-btn rounded-full flex items-center justify-center animate-pulse-slow shadow-lg"
+              >
+                <i class="fas fa-bullseye text-white text-xl"></i>
+              </div>
+
+              <!-- Additional growth indicators -->
+              <div
+                class="absolute top-1/4 -left-6 w-12 h-12 bg-[#1168ff] bg-opacity-50 rounded-full flex items-center justify-center animate-bounce shadow-lg"
+              >
+                <i class="fas fa-chart-pie text-white text-lg"></i>
+              </div>
+              <div
+                class="absolute bottom-1/4 -right-6 w-12 h-12 bg-brand-orange bg-opacity-50 rounded-full flex items-center justify-center animate-bounce shadow-lg"
+                style="animation-delay: 0.7s"
+              >
+                <i class="fas fa-trending-up text-white text-lg"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <div
+          class="w-8 h-12 rounded-full border-2 border-white border-opacity-50 flex justify-center"
+        >
+          <div
+            class="w-1 h-3 bg-white bg-opacity-50 rounded-full mt-2 animate-pulse"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 left-1/4 w-3 h-3 bg-brand-orange bg-opacity-20 rounded-full"
+        ></div>
+        <div
+          class="absolute top-2/3 right-1/4 w-4 h-4 bg-brand-blue bg-opacity-20 rounded-full"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-4">
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <span class="mx-4 text-brand-orange font-medium"
+              >আমাদের সম্পর্কে</span
+            >
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
+          >
+            আমাদের লক্ষ্য ও দৃষ্টিভঙ্গি
+            <span
+              class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+            ></span>
+          </h2>
+          <p class="text-brand-secondary max-w-2xl mx-auto mt-6">
+            আমরা কেন আছি এবং কোথায় যাচ্ছি তা জানুন
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <!-- Goal Card -->
+          <div
+            class="group relative bg-white p-1 rounded-2xl shadow-lg card-hover overflow-hidden"
+            data-aos="fade-right"
+          >
+            <!-- Animated border -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-brand-btn to-brand-btn rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+
+            <!-- Card content -->
+            <div class="relative bg-white p-8 rounded-2xl h-full">
+              <div class="flex items-start mb-6">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-orange rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-md"
+                >
+                  <i class="fas fa-bullseye text-white text-2xl"></i>
+                </div>
+                <div>
+                  <div class="flex items-center mb-1">
+                    <h3 class="text-2xl font-semibold text-brand-dark">
+                      আমাদের লক্ষ্য
+                    </h3>
+                    <span
+                      class="ml-2 px-2 py-1 bg-brand-orange bg-opacity-10 text-brand-orange text-xs rounded-full"
+                      >মিশন</span
+                    >
+                  </div>
+                  <div
+                    class="w-16 h-1 bg-gradient-to-r from-brand-btn to-brand-orange rounded-full"
+                  ></div>
+                </div>
+              </div>
+
+              <p class="text-lg text-brand-secondary mb-6">
+                রাজশাহী থেকে শুরু করে সারা বাংলাদেশের ব্যবসায়ীদের
+                পারফরম্যান্স-ভিত্তিক ডিজিটাল মার্কেটিং সলিউশন প্রদান করা, যা
+                তাদের বিক্রয় বৃদ্ধি এবং ব্যবসায়িক প্রবৃদ্ধি নিশ্চিত করে।
+              </p>
+
+              <!-- Key points -->
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary"
+                    >ফলাফল-ভিত্তিক মার্কেটিং স্ট্র্যাটেজি</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary"
+                    >স্থানীয় বাজারে বিশেষজ্ঞতা</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary"
+                    >ক্লায়েন্ট-কেন্দ্রিক সমাধান</span
+                  >
+                </div>
+              </div>
+
+              <!-- Decorative element -->
+              <div class="absolute bottom-4 right-4 opacity-10">
+                <i class="fas fa-bullseye text-6xl text-brand-orange"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision Card -->
+          <div
+            class="group relative bg-white p-1 rounded-2xl shadow-lg card-hover overflow-hidden"
+            data-aos="fade-left"
+          >
+            <!-- Animated border -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-brand-orange to-brand-accent rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+
+            <!-- Card content -->
+            <div class="relative bg-white p-8 rounded-2xl h-full">
+              <div class="flex items-start mb-6">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-md"
+                >
+                  <i class="fas fa-eye text-white text-2xl"></i>
+                </div>
+                <div>
+                  <div class="flex items-center mb-1">
+                    <h3 class="text-2xl font-semibold text-brand-dark">
+                      আমাদের দৃষ্টিভঙ্গি
+                    </h3>
+                    <span
+                      class="ml-2 px-2 py-1 bg-brand-blue bg-opacity-10 text-brand-blue text-xs rounded-full"
+                      >ভিশন</span
+                    >
+                  </div>
+                  <div
+                    class="w-16 h-1 bg-gradient-to-r from-brand-orange to-brand-accent rounded-full"
+                  ></div>
+                </div>
+              </div>
+
+              <p class="text-lg text-brand-secondary mb-6">
+                বাংলাদেশের শীর্ষস্থানীয় ডিজিটাল মার্কেটিং পার্টনার হিসেবে
+                প্রতিষ্ঠিত হওয়া, যা ROI-ফোকাসড ফলাফল এবং দীর্ঘমেয়াদী
+                ব্যবসায়িক অংশীদারিত্বের মাধ্যমে ক্লায়েন্টদের সাফল্য নিশ্চিত
+                করে।
+              </p>
+
+              <!-- Key points -->
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary">ROI-ফোকাসড মার্কেটিং</span>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary"
+                    >দীর্ঘমেয়াদী অংশীদারিত্ব</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-check text-brand-orange text-xs"></i>
+                  </div>
+                  <span class="text-brand-secondary">উদ্ভাবনী সমাধান</span>
+                </div>
+              </div>
+
+              <!-- Decorative element -->
+              <div class="absolute bottom-4 right-4 opacity-10">
+                <i class="fas fa-eye text-6xl text-brand-orange"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values section -->
+        <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
+          <h3 class="text-2xl font-bold text-center mb-10">আমাদের মূল্যবোধ</h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-16 h-16 bg-brand-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-lightbulb text-brand-orange text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">উদ্ভাবন</h4>
+              <p class="text-sm text-brand-secondary">নতুন ধারণা এবং সমাধান</p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-16 h-16 bg-brand-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-handshake text-brand-blue text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">বিশ্বাস</h4>
+              <p class="text-sm text-brand-secondary">
+                স্বচ্ছ এবং নৈতিক ব্যবসা
+              </p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-16 h-16 bg-brand-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-chart-line text-brand-accent text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">ফলাফল</h4>
+              <p class="text-sm text-brand-secondary">পরিমাপযোগ্য সাফল্য</p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-16 h-16 bg-brand-btn bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-btn group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-users text-brand-btn text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">সহযোগিতা</h4>
+              <p class="text-sm text-brand-secondary">একসাথে বৃদ্ধি</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--? Services Section -->
+    <section id="services" class="py-20 bg-gray-50 relative overflow-hidden">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-4">
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <span class="mx-4 text-brand-orange font-medium">আমাদের সেবা</span>
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
+          >
+            আমাদের সেবাসমূহ
+            <span
+              class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+            ></span>
+          </h2>
+          <p class="text-lg text-brand-secondary max-w-2xl mx-auto mt-6">
+            আমরা আপনার ব্যবসার প্রবৃদ্ধির জন্য বিশেষায়িত সেবা প্রদান করি
+          </p>
+        </div>
+
+        <!-- Service Tabs -->
+        <div
+          class="flex justify-center mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="inline-flex bg-white p-1 rounded-lg shadow-sm">
+            <button
+              class="service-tab active px-6 py-2 rounded-md text-sm font-medium transition-all duration-300"
+              data-service="all"
+            >
+              সব সেবা
+            </button>
+            <button
+              class="service-tab px-6 py-2 rounded-md text-sm font-medium transition-all duration-300"
+              data-service="marketing"
+            >
+              মার্কেটিং
+            </button>
+            <button
+              class="service-tab px-6 py-2 rounded-md text-sm font-medium transition-all duration-300"
+              data-service="realestate"
+            >
+              রিয়েল এস্টেট
+            </button>
+            <button
+              class="service-tab px-6 py-2 rounded-md text-sm font-medium transition-all duration-300"
+              data-service="ecommerce"
+            >
+              ই-কমার্স
+            </button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service Card 1 -->
+          <div
+            class="service-card-item bg-white p-8 rounded-2xl shadow-lg card-hover service-card overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="marketing"
+          >
+            <!-- Card top decoration -->
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            ></div>
+
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md"
+            >
+              <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold">পারফরম্যান্স মার্কেটিং</h3>
+              <span
+                class="px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange text-xs rounded-full"
+                >জনপ্রিয়</span
+              >
+            </div>
+            <p class="text-brand-secondary mb-6">
+              ROI-ফোকাসড ডিজিটাল মার্কেটিং ক্যাম্পেইন যা প্রকৃত ফলাফল নিশ্চিত
+              করে
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-2 text-brand-secondary mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-orange mr-2"></i>
+                Facebook/Instagram Ads
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-orange mr-2"></i>
+                Google Ads
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-orange mr-2"></i>
+                Conversion Optimization
+              </li>
+            </ul>
+
+            <!-- Stats -->
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-brand-secondary">গড় ROI</span>
+                <span class="text-lg font-bold text-brand-orange">350%</span>
+              </div>
+            </div>
+
+            <button
+              class="w-full py-2 text-center text-brand-orange font-medium rounded-lg border border-brand-orange hover:bg-brand-orange hover:text-white transition-colors duration-300"
+            >
+              আরও জানুন
+            </button>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="service-card-item bg-white p-8 rounded-2xl shadow-lg card-hover service-card overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-category="realestate"
+          >
+            <!-- Card top decoration -->
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            ></div>
+
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md"
+            >
+              <i class="fas fa-home text-white text-2xl"></i>
+            </div>
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold">রিয়েল এস্টেট মার্কেটিং</h3>
+              <span
+                class="px-3 py-1 bg-brand-blue bg-opacity-10 text-brand-blue text-xs rounded-full"
+                >বিশেষজ্ঞ</span
+              >
+            </div>
+            <p class="text-brand-secondary mb-6">
+              ফ্ল্যাট এবং প্রপার্টি বিক্রয়ের জন্য বিশেষায়িত মার্কেটিং সলিউশন
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-2 text-brand-secondary mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-blue mr-2"></i>
+                Property Photography
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-blue mr-2"></i>
+                Virtual Tours
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-blue mr-2"></i>
+                Targeted Advertising
+              </li>
+            </ul>
+
+            <!-- Stats -->
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-brand-secondary">বিক্রয় বৃদ্ধি</span>
+                <span class="text-lg font-bold text-brand-blue">65%</span>
+              </div>
+            </div>
+
+            <button
+              class="w-full py-2 text-center text-brand-blue font-medium rounded-lg border border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-300"
+            >
+              আরও জানুন
+            </button>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="service-card-item bg-white p-8 rounded-2xl shadow-lg card-hover service-card overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-category="ecommerce"
+          >
+            <!-- Card top decoration -->
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btn to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            ></div>
+
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md"
+            >
+              <i class="fas fa-shopping-cart text-white text-2xl"></i>
+            </div>
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold">ই-কমার্স সলিউশন</h3>
+              <span
+                class="px-3 py-1 bg-brand-btn bg-opacity-10 text-brand-btn text-xs rounded-full"
+                >নতুন</span
+              >
+            </div>
+            <p class="text-brand-secondary mb-6">
+              অনলাইন স্টোর এবং রিটেইল ব্যবসার জন্য ডিজিটাল গ্রোথ স্ট্র্যাটেজি
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-2 text-brand-secondary mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-btn mr-2"></i>
+                Product Photography
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-btn mr-2"></i>
+                Content Creation
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-brand-btn mr-2"></i>
+                Sales Funnel Setup
+              </li>
+            </ul>
+
+            <!-- Stats -->
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-brand-secondary">রূপান্তর হার</span>
+                <span class="text-lg font-bold text-brand-btn">42%</span>
+              </div>
+            </div>
+
+            <button
+              class="w-full py-2 text-center text-brand-btn font-medium rounded-lg border border-brand-btn hover:bg-brand-btn hover:text-white transition-colors duration-300"
+            >
+              আরও জানুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="mt-16 text-center" data-aos="fade-up">
+          <h3 class="text-2xl font-bold mb-8">আরও সেবাসমূহ</h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div
+              class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-brand-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-pen-fancy text-brand-orange text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">কন্টেন্ট মার্কেটিং</h4>
+              <p class="text-sm text-brand-secondary">কৌশলগত কন্টেন্ট তৈরি</p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-brand-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-search text-brand-blue text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">SEO</h4>
+              <p class="text-sm text-brand-secondary">
+                অনুসন্ধান ইঞ্জিন অপ্টিমাইজেশন
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-brand-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-video text-brand-accent text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">ভিডিও মার্কেটিং</h4>
+              <p class="text-sm text-brand-secondary">
+                ভিডিও কন্টেন্ট প্রোডাকশন
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-brand-btn bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-btn group-hover:text-white transition-colors duration-300"
+              >
+                <i
+                  class="fas fa-envelope text-brand-btn text-xl group-hover:text-white"
+                ></i>
+              </div>
+              <h4 class="font-semibold mb-2">ইমেইল মার্কেটিং</h4>
+              <p class="text-sm text-brand-secondary">
+                টার্গেটেড ইমেইল ক্যাম্পেইন
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-white relative overflow-hidden">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-4">
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <span class="mx-4 text-brand-orange font-medium"
+              >কিভাবে কাজ করি</span
+            >
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
+          >
+            আমাদের কাজের প্রক্রিয়া
+            <span
+              class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+            ></span>
+          </h2>
+          <p class="text-lg text-brand-secondary max-w-2xl mx-auto mt-6">
+            আমরা কিভাবে আপনার ব্যবসার প্রবৃদ্ধি নিশ্চিত করি
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="relative">
+            <!-- Process line -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-brand-orange to-brand-blue bg-opacity-30"
+            ></div>
+
+            <!-- Progress indicator -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 h-0 bg-gradient-to-b from-brand-orange to-brand-blue transition-all duration-1000 ease-out"
+              id="progressBar"
+            ></div>
+
+            <!-- Process Steps -->
+            <div class="space-y-12">
+              <!-- Step 1 -->
+              <div
+                class="flex items-center process-step"
+                data-aos="fade-right"
+                data-step="1"
+              >
+                <div class="w-1/2 pr-8 text-right">
+                  <div
+                    class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
+                  >
+                    ধাপ ১
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">প্রাথমিক পরিকল্পনা</h3>
+                  <p class="text-brand-secondary">
+                    আপনার ব্যবসার বর্তমান অবস্থা বিশ্লেষণ এবং লক্ষ্য নির্ধারণ
+                  </p>
+                  <div class="mt-4 flex justify-end">
+                    <div class="flex items-center text-sm text-brand-secondary">
+                      <i class="fas fa-clock mr-2"></i>
+                      <span>১-২ দিন</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110"
+                >
+                  1
+                </div>
+                <div class="w-1/2 pl-8"></div>
+              </div>
+
+              <!-- Step 2 -->
+              <div
+                class="flex items-center process-step"
+                data-aos="fade-left"
+                data-step="2"
+              >
+                <div class="w-1/2 pr-8"></div>
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110"
+                >
+                  2
+                </div>
+                <div class="w-1/2 pl-8">
+                  <div
+                    class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
+                  >
+                    ধাপ ২
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">কন্টেন্ট তৈরি</h3>
+                  <p class="text-brand-secondary">
+                    প্রোডাক্ট/সার্ভিসের ফটোগ্রাফি, ভিডিও এবং বিজ্ঞাপন ক্রিয়েটিভ
+                  </p>
+                  <div class="mt-4">
+                    <div class="flex items-center text-sm text-brand-secondary">
+                      <i class="fas fa-clock mr-2"></i>
+                      <span>৩-৫ দিন</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div
+                class="flex items-center process-step"
+                data-aos="fade-right"
+                data-step="3"
+              >
+                <div class="w-1/2 pr-8 text-right">
+                  <div
+                    class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
+                  >
+                    ধাপ ৩
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">ক্যাম্পেইন চালু</h3>
+                  <p class="text-brand-secondary">
+                    টার্গেটেড বিজ্ঞাপন ক্যাম্পেইন চালু এবং অপটিমাইজেশন
+                  </p>
+                  <div class="mt-4 flex justify-end">
+                    <div class="flex items-center text-sm text-brand-secondary">
+                      <i class="fas fa-clock mr-2"></i>
+                      <span>১-২ সপ্তাহ</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110"
+                >
+                  3
+                </div>
+                <div class="w-1/2 pl-8"></div>
+              </div>
+
+              <!-- Step 4 -->
+              <div
+                class="flex items-center process-step"
+                data-aos="fade-left"
+                data-step="4"
+              >
+                <div class="w-1/2 pr-8"></div>
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110"
+                >
+                  4
+                </div>
+                <div class="w-1/2 pl-8">
+                  <div
+                    class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
+                  >
+                    ধাপ ৪
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">লিড ম্যানেজমেন্ট</h3>
+                  <p class="text-brand-secondary">
+                    CRM এর মাধ্যমে লিড ট্র্যাকিং এবং ফলো-আপ
+                  </p>
+                  <div class="mt-4">
+                    <div class="flex items-center text-sm text-brand-secondary">
+                      <i class="fas fa-clock mr-2"></i>
+                      <span>চলমান</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div
+                class="flex items-center process-step"
+                data-aos="fade-right"
+                data-step="5"
+              >
+                <div class="w-1/2 pr-8 text-right">
+                  <div
+                    class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
+                  >
+                    ধাপ ৫
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">রেজাল্ট এনালাইসিস</h3>
+                  <p class="text-brand-secondary">
+                    ক্যাম্পেইনের ফলাফল বিশ্লেষণ এবং কমিশন হিসাব
+                  </p>
+                  <div class="mt-4 flex justify-end">
+                    <div class="flex items-center text-sm text-brand-secondary">
+                      <i class="fas fa-clock mr-2"></i>
+                      <span>মাসিক</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110"
+                >
+                  5
+                </div>
+                <div class="w-1/2 pl-8"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Process CTA -->
+          <div class="text-center mt-16" data-aos="fade-up">
+            <div
+              class="inline-block bg-gradient-to-r from-brand-orange to-brand-blue p-1 rounded-full"
+            >
+              <button
+                class="bg-white px-8 py-3 rounded-full font-semibold text-brand-orange hover:bg-transparent hover:text-white transition-all duration-300"
+              >
+                আজই আপনার প্রক্রিয়া শুরু করুন
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-[#2a3345] relative overflow-hidden">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-4">
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <span class="mx-4 text-brand-orange font-medium"
+              >ক্লায়েন্ট অভিজ্ঞতা</span
+            >
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
+          >
+            ক্লায়েন্টদের মতামত
+            <span
+              class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+            ></span>
+          </h2>
+          <p class="text-lg text-brand-secondary max-w-2xl mx-auto mt-6">
+            আমাদের ক্লায়েন্টরা আমাদের সেবা নিয়ে কি বলেন
+          </p>
+        </div>
+
+        <!-- Testimonial Carousel -->
+        <div class="max-w-6xl mx-auto relative">
+          <!-- Carousel container -->
+          <div class="overflow-hidden">
+            <div
+              class="flex transition-transform duration-500 ease-in-out"
+              id="testimonialContainer"
+            >
+              <!-- Testimonial 1 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      A
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">আব্দুল করিম</h4>
+                      <p class="text-sm text-brand-secondary">
+                        ইলেকট্রনিক্স ব্যবসায়ী
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "Exzazon-এর সাহায্যে আমার অনলাইন বিক্রি ৬ মাসে ৩ গুণ
+                    বেড়েছে। তাদের ROI-ফোকাসড অ্যাপ্রোচ অসাধারণ!"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-orange bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-chart-line text-brand-orange mr-2"></i>
+                    <span class="text-brand-orange font-medium"
+                      >৩০০% বিক্রয় বৃদ্ধি</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-orange opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      R
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">রহিমা খাতুন</h4>
+                      <p class="text-sm text-brand-secondary">
+                        রিয়েল এস্টেট ডেভেলপার
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "আমাদের প্রজেক্টের জন্য ভার্চুয়াল ট্যুর এবং টার্গেটেড
+                    মার্কেটিং এর ফলে বিক্রি দ্রুত বেড়েছে। অসাধারণ সার্ভিস!"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-blue bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-home text-brand-blue mr-2"></i>
+                    <span class="text-brand-blue font-medium"
+                      >৬৫% বিক্রয় বৃদ্ধি</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-blue opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btn to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      M
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">মোঃ সোহেল</h4>
+                      <p class="text-sm text-brand-secondary">
+                        ফ্যাশন রিটেইলার
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "Exzazon-এর পারফরম্যান্স বেসড মডেল আমাদের জন্য গেম চেঞ্জার
+                    হয়েছে। তারা সত্যিই ফলাফল নিশ্চিত করে!"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-btn bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-shopping-cart text-brand-btn mr-2"></i>
+                    <span class="text-brand-btn font-medium"
+                      >৪২% রূপান্তর হার</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-btn opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Testimonials -->
+              <!-- Testimonial 4 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-accent to-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-accent to-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      S
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">সামিয়া আক্তার</h4>
+                      <p class="text-sm text-brand-secondary">
+                        ফুড বিজনেস ওনার
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "Exzazon-এর সামাজিক মিডিয়া মার্কেটিং স্ট্র্যাটেজি আমার
+                    রেস্টুরেন্টের অনলাইন অর্ডার ২০০% বাড়িয়েছে। তাদের টিম
+                    অসাধারণ!"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-accent bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-utensils text-brand-accent mr-2"></i>
+                    <span class="text-brand-accent font-medium"
+                      >২০০% অর্ডার বৃদ্ধি</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-accent opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 5 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-btn transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-btn rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      K
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">কামরুল হাসান</h4>
+                      <p class="text-sm text-brand-secondary">
+                        ই-কমার্স এন্টারপ্রিনার
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "আমার অনলাইন স্টোরের জন্য Exzazon-এর কন্টেন্ট মার্কেটিং
+                    সার্ভিস অসাধারণ। তারা আমার ব্র্যান্ড ভিজিবিলিটি বাড়িয়েছে।"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-blue bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-eye text-brand-blue mr-2"></i>
+                    <span class="text-brand-blue font-medium"
+                      >১৫০% ভিজিটর বৃদ্ধি</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-blue opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 6 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-blue rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      T
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg">তাসনিয়া জামান</h4>
+                      <p class="text-sm text-brand-secondary">
+                        হেলথকেয়ার স্টার্টআপ
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Rating -->
+                  <div class="flex mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+
+                  <p class="text-brand-secondary mb-6">
+                    "Exzazon-এর ইনফ্লুয়েন্সার মার্কেটিং ক্যাম্পেইন আমাদের
+                    প্রোডাক্ট লঞ্চের জন্য অসাধারণ ফলাফল এনেছে।"
+                  </p>
+
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-brand-orange bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i class="fas fa-heartbeat text-brand-orange mr-2"></i>
+                    <span class="text-brand-orange font-medium"
+                      >৫০০% লিড বৃদ্ধি</span
+                    >
+                  </div>
+
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-brand-orange opacity-10"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <button
+            id="prevTestimonial"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            id="nextTestimonial"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Dots indicator -->
+          <div class="flex justify-center mt-8 space-x-2" id="testimonialDots">
+            <button
+              class="w-3 h-3 rounded-full bg-brand-orange transition-all duration-300 dot active"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
+            ></button>
+          </div>
+
+          <!-- Auto-play progress bar -->
+          <div
+            class="mt-6 h-1 bg-gray-200 rounded-full overflow-hidden max-w-md mx-auto"
+          >
+            <div
+              class="h-full bg-brand-orange rounded-full transition-all duration-1000 ease-linear"
+              id="testimonialProgress"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Stats section -->
+        <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl font-bold text-brand-orange mb-2">200+</div>
+              <div class="text-sm text-brand-secondary">
+                সন্তুষ্ট ক্লায়েন্ট
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl font-bold text-brand-blue mb-2">95%</div>
+              <div class="text-sm text-brand-secondary">সফলতার হার</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl font-bold text-brand-btn mb-2">3x</div>
+              <div class="text-sm text-brand-secondary">গড় বৃদ্ধি</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="text-3xl font-bold text-brand-accent mb-2">24/7</div>
+              <div class="text-sm text-brand-secondary">সাপোর্ট</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div class="inline-flex items-center justify-center mb-4">
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <span class="mx-4 text-brand-orange font-medium">যোগাযোগ করুন</span>
+            <div class="w-12 h-0.5 bg-brand-orange"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
+          >
+            আমাদের সাথে যোগাযোগ করুন
+            <span
+              class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+            ></span>
+          </h2>
+          <p class="text-lg text-brand-secondary max-w-2xl mx-auto mt-6">
+            আপনার ব্যবসার প্রবৃদ্ধির জন্য আজই আমাদের সাথে যোগাযোগ করুন
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div data-aos="fade-right" class="contact-info">
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                  <span
+                    class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white mr-3"
+                  >
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  যোগাযোগের তথ্য
+                </h3>
+                <p class="text-brand-secondary">
+                  আমাদের সাথে যোগাযোগ করুন এবং আপনার ব্যবসার প্রবৃদ্ধির জন্য
+                  আমাদের সেবা নিন
+                </p>
+              </div>
+
+              <div class="space-y-6">
+                <!-- Address -->
+                <div
+                  class="flex items-start group cursor-pointer"
+                  onclick="openMap()"
+                >
+                  <div
+                    class="w-12 h-12 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center mr-4 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                  >
+                    <i
+                      class="fas fa-map-marker-alt text-brand-orange group-hover:text-white"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold mb-1 group-hover:text-brand-orange transition-colors duration-300"
+                    >
+                      ঠিকানা
+                    </h4>
+                    <p class="text-brand-secondary">
+                      হেড অফিস: বায়া, পবা, রাজশাহী
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start group">
+                  <div
+                    class="w-12 h-12 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center mr-4 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                  >
+                    <i
+                      class="fas fa-phone-alt text-brand-orange group-hover:text-white"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold mb-1 group-hover:text-brand-orange transition-colors duration-300"
+                    >
+                      ফোন
+                    </h4>
+                    <p class="text-brand-secondary">
+                      <a
+                        href="tel:+8801712345678"
+                        class="hover:text-brand-orange transition-colors duration-300"
+                        >+৮৮০ ১৭১২-৩৪৫৬৭৮</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-start group">
+                  <div
+                    class="w-12 h-12 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center mr-4 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                  >
+                    <i
+                      class="fas fa-envelope text-brand-orange group-hover:text-white"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold mb-1 group-hover:text-brand-orange transition-colors duration-300"
+                    >
+                      ইমেইল
+                    </h4>
+                    <p class="text-brand-secondary">
+                      <a
+                        href="mailto:info@exzazon.com"
+                        class="hover:text-brand-orange transition-colors duration-300"
+                        >info@exzazon.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Working Hours -->
+                <div class="flex items-start group">
+                  <div
+                    class="w-12 h-12 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center mr-4 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300"
+                  >
+                    <i
+                      class="fas fa-clock text-brand-orange group-hover:text-white"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-semibold mb-1 group-hover:text-brand-orange transition-colors duration-300"
+                    >
+                      সময়সূচী
+                    </h4>
+                    <p class="text-brand-secondary">
+                      রবিবার - বৃহস্পতিবার: ৯টা - ৬টা
+                    </p>
+                    <p class="text-brand-secondary">শুক্রবার: ৯টা - ২টা</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Media -->
+              <div class="mt-10">
+                <h4 class="font-semibold mb-4 flex items-center">
+                  <span
+                    class="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white mr-2"
+                  >
+                    <i class="fas fa-share-alt text-sm"></i>
+                  </span>
+                  আমাদের অনুসরণ করুন
+                </h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white hover:bg-brand-accent transition-all duration-300 transform hover:scale-110 shadow-md"
+                    title="Facebook"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-md"
+                    title="LinkedIn"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-110 shadow-md"
+                    title="Instagram"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-md"
+                    title="YouTube"
+                  >
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Map Preview -->
+              <div
+                class="mt-8 rounded-xl overflow-hidden shadow-lg h-48 relative"
+                data-aos="zoom-in"
+              >
+                <img
+                  src="https://via.placeholder.com/600x400"
+                  alt="Map"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+                >
+                  <button
+                    onclick="openMap()"
+                    class="bg-white text-brand-orange px-4 py-2 rounded-full font-medium hover:bg-brand-orange hover:text-white transition-all duration-300 flex items-center"
+                  >
+                    <i class="fas fa-map-marked-alt mr-2"></i>
+                    ম্যাপে দেখুন
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div data-aos="fade-left">
+              <div
+                class="bg-gradient-to-br from-brand-orange to-brand-blue p-1 rounded-2xl shadow-xl"
+              >
+                <form
+                  id="contactForm"
+                  class="bg-white p-8 rounded-2xl contact-form"
+                >
+                  <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                    <span
+                      class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white mr-3"
+                    >
+                      <i class="fas fa-paper-plane"></i>
+                    </span>
+                    বার্তা পাঠান
+                  </h3>
+
+                  <!-- Form Fields -->
+                  <div class="space-y-4">
+                    <!-- Name -->
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange peer"
+                        required
+                      />
+                      <label
+                        for="name"
+                        class="absolute left-4 top-3 text-gray-500 transition-all duration-300 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-brand-orange peer-focus:bg-white peer-focus:px-1 peer-valid:-top-2 peer-valid:left-3 peer-valid:text-brand-orange peer-valid:bg-white peer-valid:px-1"
+                      >
+                        নাম *
+                      </label>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="relative">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange peer"
+                        required
+                      />
+                      <label
+                        for="email"
+                        class="absolute left-4 top-3 text-gray-500 transition-all duration-300 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-brand-orange peer-focus:bg-white peer-focus:px-1 peer-valid:-top-2 peer-valid:left-3 peer-valid:text-brand-orange peer-valid:bg-white peer-valid:px-1"
+                      >
+                        ইমেইল *
+                      </label>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="relative">
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange peer"
+                        required
+                      />
+                      <label
+                        for="phone"
+                        class="absolute left-4 top-3 text-gray-500 transition-all duration-300 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-brand-orange peer-focus:bg-white peer-focus:px-1 peer-valid:-top-2 peer-valid:left-3 peer-valid:text-brand-orange peer-valid:bg-white peer-valid:px-1"
+                      >
+                        ফোন নম্বর *
+                      </label>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="relative">
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange peer resize-none"
+                        required
+                      ></textarea>
+                      <label
+                        for="message"
+                        class="absolute left-4 top-3 text-gray-500 transition-all duration-300 peer-focus:-top-2 peer-focus:left-3 peer-focus:text-brand-orange peer-focus:bg-white peer-focus:px-1 peer-valid:-top-2 peer-valid:left-3 peer-valid:text-brand-orange peer-valid:bg-white peer-valid:px-1"
+                      >
+                        বার্তা *
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button
+                    type="submit"
+                    class="w-full bg-gradient-to-r from-brand-orange to-brand-blue text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] shadow-md mt-6 flex items-center justify-center"
+                    id="submitBtn"
+                  >
+                    <span id="btnText">পাঠান</span>
+                    <i class="fas fa-paper-plane ml-2" id="btnIcon"></i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Success Message -->
+              <div
+                id="successMessage"
+                class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-center"
+              >
+                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                <div>
+                  <h4 class="font-semibold">সফল!</h4>
+                  <p>
+                    আপনার বার্তা পাঠানো হয়েছে! আমরা শীঘ্রই আপনার সাথে যোগাযোগ
+                    করব।
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section
+      class="py-20 relative overflow-hidden"
+      style="background-color: #2a3345"
+    >
+      <!-- Background decoration -->
+      <div class="absolute inset-0 overflow-hidden">
+        <!-- Animated background shapes -->
+        <div
+          class="absolute top-0 left-0 w-64 h-64 bg-brand-orange bg-opacity-10 rounded-full filter blur-3xl animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-72 h-72 bg-brand-blue bg-opacity-10 rounded-full filter blur-3xl animate-pulse-slow"
+          style="animation-delay: 1s"
+        ></div>
+
+        <!-- Grid pattern -->
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="h-full w-full"
+            style="
+              background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.2%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            "
+          ></div>
+        </div>
+
+        <!-- Floating particles -->
+        <div
+          class="absolute top-1/4 left-1/4 w-3 h-3 bg-white bg-opacity-20 rounded-full animate-bounce"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-2 h-2 bg-white bg-opacity-30 rounded-full animate-bounce"
+          style="animation-delay: 0.5s"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-white bg-opacity-20 rounded-full animate-bounce"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-white bg-opacity-30 rounded-full animate-bounce"
+          style="animation-delay: 1.5s"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="mb-6 inline-block px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-full"
+            data-aos="fade-up"
+          >
+            <p class="text-white text-sm font-medium flex items-center">
+              <i class="fas fa-star text-yellow-300 mr-2"></i>
+              আজই শুরু করুন আপনার ব্যবসার যাত্রা
+            </p>
+          </div>
+
+          <h2
+            class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+            data-aos="fade-up"
+          >
+            আপনার ব্যবসার
+            <span class="text-yellow-300 relative">
+              প্রবৃদ্ধি
+              <svg
+                class="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,5 C25,2 50,8 75,5 C100,2 125,8 150,5 C175,2 200,5 200,5"
+                  stroke="#FFD700"
+                  stroke-width="3"
+                  fill="none"
+                />
+              </svg>
+            </span>
+            শুরু করার সময় এখনই
+          </h2>
+
+          <p
+            class="text-xl text-white text-opacity-90 mb-10 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Exzazon-এর সাথে অংশীদারিত্ব করে আপনার ব্যবসাকে নতুন উচ্চতায় নিয়ে
+            যান
+          </p>
+
+          <!-- Stats -->
+          <div
+            class="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white mb-1">200+</div>
+              <div class="text-sm text-white text-opacity-80">
+                সন্তুষ্ট ক্লায়েন্ট
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white mb-1">95%</div>
+              <div class="text-sm text-white text-opacity-80">সফলতার হার</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-white mb-1">3x</div>
+              <div class="text-sm text-white text-opacity-80">গড় বৃদ্ধি</div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="bg-white text-brand-orange px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-brand-light transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
+              id="ctaButton"
+            >
+              <span>আজই যোগাযোগ করুন</span>
+              <i
+                class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
+              ></i>
+            </button>
+            <button
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brand-orange transition-all duration-300 flex items-center justify-center"
+            >
+              <i class="fas fa-phone-alt mr-2"></i>
+              <span>কল করুন: +৮৮০ ১৭১২-৩৪৫৬৭৮</span>
+            </button>
+          </div>
+
+          <!-- Trust indicators -->
+          <div
+            class="mt-16 flex justify-center space-x-8"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="flex items-center text-white text-opacity-80">
+              <i class="fas fa-shield-alt mr-2"></i>
+              <span>নিরাপদ পেমেন্ট</span>
+            </div>
+            <div class="flex items-center text-white text-opacity-80">
+              <i class="fas fa-lock mr-2"></i>
+              <span>তথ্য গোপনীয়তা</span>
+            </div>
+            <div class="flex items-center text-white text-opacity-80">
+              <i class="fas fa-headset mr-2"></i>
+              <span>২৪/৭ সাপোর্ট</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom wave decoration -->
+      <div class="absolute bottom-0 left-0 w-full">
+        <svg
+          class="w-full h-16"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="py-16 bg-brand-dark text-white footer-bg relative overflow-hidden"
+    >
+      <!-- Background decoration -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
+        <div
+          class="absolute top-10 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-10 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+        ></div>
+
+        <!-- Grid pattern -->
+        <div class="absolute inset-0 opacity-5">
+          <div
+            class="h-full w-full"
+            style="
+              background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.2%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div data-aos="fade-up">
+            <div class="flex items-center space-x-3 mb-6 group">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+              >
+                <i class="fas fa-bolt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-bold text-gradient">Exzazon</span>
+            </div>
+            <p class="text-gray-300 mb-6">
+              পারফরম্যান্স-ভিত্তিক ডিজিটাল মার্কেটিং সলিউশন যা ফলাফল নিশ্চিত করে
+            </p>
+
+            <!-- Social Media -->
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-brand-orange transition-all duration-300 transform hover:scale-110"
+                title="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-brand-blue bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-brand-blue transition-all duration-300 transform hover:scale-110"
+                title="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 bg-opacity-20 rounded-full flex items-center justify-center text-white hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110"
+                title="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-red-600 bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-all duration-300 transform hover:scale-110"
+                title="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-lg font-semibold mb-6 flex items-center">
+              <span
+                class="w-8 h-8 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center text-brand-orange mr-2"
+              >
+                <i class="fas fa-link text-sm"></i>
+              </span>
+              দ্রুত লিংক
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>হোম</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>আমাদের সম্পর্কে</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>সেবাসমূহ</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>প্রক্রিয়া</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>যোগাযোগ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-lg font-semibold mb-6 flex items-center">
+              <span
+                class="w-8 h-8 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center text-brand-orange mr-2"
+              >
+                <i class="fas fa-concierge-bell text-sm"></i>
+              </span>
+              সেবাসমূহ
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>পারফরম্যান্স মার্কেটিং</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>রিয়েল এস্টেট মার্কেটিং</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>ই-কমার্স সলিউশন</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>কন্টেন্ট ক্রিয়েশন</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-brand-orange transition flex items-center group"
+                >
+                  <i
+                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></i>
+                  <span>ব্র্যান্ডিং সলিউশন</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-lg font-semibold mb-6 flex items-center">
+              <span
+                class="w-8 h-8 bg-brand-orange bg-opacity-20 rounded-full flex items-center justify-center text-brand-orange mr-2"
+              >
+                <i class="fas fa-envelope text-sm"></i>
+              </span>
+              নিউজলেটার
+            </h3>
+            <p class="text-gray-300 mb-4">
+              আমাদের সর্বশেষ আপডেট এবং অফার পেতে সাবস্ক্রাইব করুন
+            </p>
+
+            <form id="newsletterForm" class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="আপনার ইমেইল"
+                  class="px-4 py-3 rounded-l-lg w-full text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="bg-brand-btn px-4 py-3 rounded-r-lg hover:bg-brand-accent transition flex items-center justify-center"
+                  id="newsletterBtn"
+                >
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Success message -->
+            <div
+              id="newsletterSuccess"
+              class="hidden mb-4 p-3 bg-green-600 bg-opacity-20 border border-green-600 text-green-400 rounded-lg text-sm flex items-center"
+            >
+              <i class="fas fa-check-circle mr-2"></i>
+              <span>সফলভাবে সাবস্ক্রাইব করা হয়েছে!</span>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-6 pt-6 border-t border-gray-700">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-phone-alt text-brand-orange mr-3"></i>
+                <span class="text-gray-300">+৮৮০ ১৭১২-৩৪৫৬৭৮</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-brand-orange mr-3"></i>
+                <span class="text-gray-300">info@exzazon.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-300 mb-4 md:mb-0">
+              © ২০২৩ Exzazon. by || Rashedul Islam || সর্বস্বত্ব সংরক্ষিত |
+              <span class="text-brand-orange"
+                >Ignite Excellence. Empower Growth.
+              </span>
+            </p>
+
+            <!-- Payment Methods -->
+            <div class="flex items-center space-x-4">
+              <span class="text-gray-400 text-sm">আমরা গ্রহণ করি:</span>
+              <div class="flex space-x-2">
+                <div
+                  class="w-8 h-5 bg-gray-700 rounded flex items-center justify-center"
+                  title="Visa"
+                >
+                  <i class="fab fa-cc-visa text-white text-sm"></i>
+                </div>
+                <div
+                  class="w-8 h-5 bg-gray-700 rounded flex items-center justify-center"
+                  title="Mastercard"
+                >
+                  <i class="fab fa-cc-mastercard text-white text-sm"></i>
+                </div>
+                <div
+                  class="w-8 h-5 bg-gray-700 rounded flex items-center justify-center"
+                  title="PayPal"
+                >
+                  <i class="fab fa-cc-paypal text-white text-sm"></i>
+                </div>
+                <div
+                  class="w-8 h-5 bg-gray-700 rounded flex items-center justify-center"
+                  title="American Express"
+                >
+                  <i class="fab fa-cc-amex text-white text-sm"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to top button -->
+      <button
+        id="backToTop"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white shadow-lg hover:bg-brand-accent transition-all duration-300 opacity-0 invisible z-50"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </footer>
+
+    <!-- Back to top button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white shadow-lg hover:bg-brand-accent transition-all duration-300 opacity-0 invisible"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
