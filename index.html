@@ -167,6 +167,10 @@
         --neon-pink: #ff00a0;
         --cyber-teal: #00f5d4;
         --shadow-color: rgba(0, 0, 0, 0.3);
+        --theme-accent: #f97316;
+        --theme-secondary: #3b82f6;
+        --theme-accent-rgb: 249, 115, 22;
+        --theme-secondary-rgb: 59, 130, 246;
       }
 
       /* Base body styles */
@@ -651,34 +655,94 @@
       }
 
       /* FAQ styles */
-      .faq-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      .theme-accent-bg {
+        background-color: var(--theme-accent);
       }
 
-      .faq-question {
-        cursor: pointer;
-        padding: 1rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .theme-secondary-bg {
+        background-color: var(--theme-secondary);
+      }
+
+      .theme-accent-bg-opacity-5 {
+        background-color: rgba(var(--theme-accent-rgb), 0.05);
+      }
+
+      .theme-secondary-bg-opacity-5 {
+        background-color: rgba(var(--theme-secondary-rgb), 0.05);
+      }
+
+      .theme-accent-bg-opacity-10 {
+        background-color: rgba(var(--theme-accent-rgb), 0.1);
+      }
+
+      .theme-secondary-bg-opacity-10 {
+        background-color: rgba(var(--theme-secondary-rgb), 0.1);
+      }
+
+      .theme-accent-text {
+        color: var(--theme-accent);
+      }
+
+      .theme-secondary-text {
+        color: var(--theme-secondary);
+      }
+
+      .theme-gradient {
+        background: linear-gradient(
+          to right,
+          var(--theme-accent),
+          var(--theme-secondary)
+        );
+      }
+
+      /* Theme specific styles */
+      .theme-orange.active {
+        background: linear-gradient(to right, #f97316, #3b82f6);
+        color: white;
+      }
+
+      .theme-green.active {
+        background: linear-gradient(to right, #10b981, #14b8a6);
+        color: white;
+      }
+
+      .theme-purple.active {
+        background: linear-gradient(to right, #8b5cf6, #ec4899);
+        color: white;
+      }
+
+      /* Theme switcher styles */
+      .theme-btn {
+        transition: all 0.2s ease;
+      }
+
+      .theme-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      /* FAQ specific styles */
+      .faq-item {
+        transition: all 0.3s ease;
       }
 
       .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        animation: fadeIn 0.3s ease-in-out;
       }
 
-      .faq-item.active .faq-answer {
-        max-height: 500px;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      .faq-item.active .faq-icon {
+      .faq-icon.active {
         transform: rotate(180deg);
-      }
-
-      .faq-icon {
-        transition: transform 0.3s ease;
       }
     </style>
   </head>
@@ -971,7 +1035,7 @@
             </div>
 
             <!-- Modern buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 item-center">
+            <div class="flex sm:flex-row gap-4 item-center">
               <button
                 class="group relative px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl gpu-accelerated"
                 onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
@@ -2746,36 +2810,35 @@
         class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
       >
         <div
-          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full theme-accent-bg-opacity-5"
         ></div>
         <div
-          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full theme-secondary-bg-opacity-5"
         ></div>
         <div
-          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full theme-accent-bg-opacity-10"
         ></div>
         <div
-          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full theme-secondary-bg-opacity-10"
         ></div>
       </div>
 
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
-            <div class="w-12 h-0.5 bg-brand-orange"></div>
-            <span class="mx-4 text-brand-orange font-medium"
+            <div class="w-12 h-0.5 bg-brand-orange theme-accent-bg"></div>
+            <span class="mx-4 text-brand-orange font-medium theme-accent-text"
               >Frequently Asked Questions</span
             >
-            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <div class="w-12 h-0.5 bg-brand-orange theme-accent-bg"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block dark:text-brand-light"
             >
               FAQ
               <span
-                class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full"
+                class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full theme-gradient"
               ></span>
             </h2>
             <p
@@ -2786,19 +2849,45 @@
           </div>
         </div>
 
+        <!-- Theme Selector -->
+        <div class="flex justify-center mb-8">
+          <div class="bg-white p-2 dark:bg-gray-800 rounded-lg shadow p-2 flex">
+            <button
+              class="theme-btn border px-4 py-2 rounded-md mr-2 text-sm font-medium theme-orange active"
+            >
+              Orange-Blue
+            </button>
+            <button
+              class="theme-btn border px-4 py-2 rounded-md mr-2 text-sm font-medium theme-green"
+            >
+              Green-Teal
+            </button>
+            <button
+              class="theme-btn px-4 border py-2 rounded-md text-sm font-medium theme-purple"
+            >
+              Purple-Pink
+            </button>
+          </div>
+        </div>
+
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
           <div
             class="bg-white rounded-xl shadow-lg overflow-hidden dark:bg-brand-dark optimized-border"
           >
             <!-- FAQ Item 1 -->
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+            <div class="faq-item border-b border-gray-100 dark:border-gray-700">
+              <div
+                class="faq-question p-6 cursor-pointer flex justify-between items-center transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+                onclick="toggleFAQ(this)"
+              >
                 <h3 class="font-medium dark:text-brand-light">
                   What is performance-based marketing?
                 </h3>
-                <i class="fas fa-chevron-down faq-icon text-brand-orange"></i>
+                <i
+                  class="fas fa-chevron-down faq-icon text-brand-orange theme-accent-text transition-transform duration-300"
+                ></i>
               </div>
-              <div class="faq-answer px-4 pb-4">
+              <div class="faq-answer px-6 pb-4 hidden">
                 <p class="text-brand-secondary dark:text-gray-300">
                   Performance-based marketing is a model where agencies are
                   compensated based on the results they deliver, such as leads
@@ -2809,14 +2898,19 @@
             </div>
 
             <!-- FAQ Item 2 -->
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+            <div class="faq-item border-b border-gray-100 dark:border-gray-700">
+              <div
+                class="faq-question p-6 cursor-pointer flex justify-between items-center transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+                onclick="toggleFAQ(this)"
+              >
                 <h3 class="font-medium dark:text-brand-light">
                   How long does it take to see results?
                 </h3>
-                <i class="fas fa-chevron-down faq-icon text-brand-orange"></i>
+                <i
+                  class="fas fa-chevron-down faq-icon text-brand-orange theme-accent-text transition-transform duration-300"
+                ></i>
               </div>
-              <div class="faq-answer px-4 pb-4">
+              <div class="faq-answer px-6 pb-4 hidden">
                 <p class="text-brand-secondary dark:text-gray-300">
                   The timeline varies depending on your industry and goals, but
                   most clients start seeing initial results within 30-60 days.
@@ -2827,14 +2921,19 @@
             </div>
 
             <!-- FAQ Item 3 -->
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+            <div class="faq-item border-b border-gray-100 dark:border-gray-700">
+              <div
+                class="faq-question p-6 cursor-pointer flex justify-between items-center transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+                onclick="toggleFAQ(this)"
+              >
                 <h3 class="font-medium dark:text-brand-light">
                   Do you work with businesses outside of Rajshahi?
                 </h3>
-                <i class="fas fa-chevron-down faq-icon text-brand-orange"></i>
+                <i
+                  class="fas fa-chevron-down faq-icon text-brand-orange theme-accent-text transition-transform duration-300"
+                ></i>
               </div>
-              <div class="faq-answer px-4 pb-4">
+              <div class="faq-answer px-6 pb-4 hidden">
                 <p class="text-brand-secondary dark:text-gray-300">
                   Yes, while we're based in Rajshahi, we work with businesses
                   across Bangladesh and internationally. Our digital marketing
@@ -2844,14 +2943,19 @@
             </div>
 
             <!-- FAQ Item 4 -->
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+            <div class="faq-item border-b border-gray-100 dark:border-gray-700">
+              <div
+                class="faq-question p-6 cursor-pointer flex justify-between items-center transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+                onclick="toggleFAQ(this)"
+              >
                 <h3 class="font-medium dark:text-brand-light">
                   What makes your agency different?
                 </h3>
-                <i class="fas fa-chevron-down faq-icon text-brand-orange"></i>
+                <i
+                  class="fas fa-chevron-down faq-icon text-brand-orange theme-accent-text transition-transform duration-300"
+                ></i>
               </div>
-              <div class="faq-answer px-4 pb-4">
+              <div class="faq-answer px-6 pb-4 hidden">
                 <p class="text-brand-secondary dark:text-gray-300">
                   Our performance-based model sets us apart. We're invested in
                   your success and structure our compensation around delivering
@@ -2863,13 +2967,18 @@
 
             <!-- FAQ Item 5 -->
             <div class="faq-item">
-              <div class="faq-question" onclick="toggleFAQ(this)">
+              <div
+                class="faq-question p-6 cursor-pointer flex justify-between items-center transition-all hover:bg-gray-50 dark:hover:bg-gray-800"
+                onclick="toggleFAQ(this)"
+              >
                 <h3 class="font-medium dark:text-brand-light">
                   How do you measure success?
                 </h3>
-                <i class="fas fa-chevron-down faq-icon text-brand-orange"></i>
+                <i
+                  class="fas fa-chevron-down faq-icon text-brand-orange theme-accent-text transition-transform duration-300"
+                ></i>
               </div>
-              <div class="faq-answer px-4 pb-4">
+              <div class="faq-answer px-6 pb-4 hidden">
                 <p class="text-brand-secondary dark:text-gray-300">
                   We measure success through key performance indicators (KPIs)
                   like conversion rates, cost per acquisition, return on ad
@@ -2882,7 +2991,6 @@
         </div>
       </div>
     </section>
-
     <!-- Contact Section -->
     <section
       id="contact"
@@ -3612,7 +3720,7 @@
                 aria-label="Email for newsletter"
               />
               <button
-                class="bg-brand-neonPink px-4 py-2 rounded-r-lg hover:bg-brand-electricViolet transition-colors"
+                class="bg-[#ff00a0] px-4 py-2 rounded-r-lg hover:bg-brand-electricViolet transition-colors"
                 onclick="subscribeNewsletter()"
                 aria-label="Subscribe to newsletter"
               >
@@ -3625,7 +3733,16 @@
         <div
           class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2023 EXZAZON. All rights reserved.</p>
+          <p>
+            &copy; 2023 EXZAZON. ||
+            <a
+              class="text-[#ffffff]"
+              target="_blank"
+              href="https://www.linkedin.com/in/rashedulraha/"
+              >Rashedul Islam</a
+            >
+            || All rights reserved.
+          </p>
           <div class="mt-2 flex justify-center space-x-4 flex-wrap">
             <a href="#" class="hover:text-brand-cyberTeal transition-colors"
               >Privacy Policy</a
@@ -4196,21 +4313,100 @@
         }
       });
 
-      // FAQ Toggle Function (NEW)
+      // FAQ Toggle Function
       function toggleFAQ(element) {
-        const faqItem = element.parentElement;
-        const isActive = faqItem.classList.contains("active");
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector(".faq-icon");
 
-        // Close all FAQ items
-        document.querySelectorAll(".faq-item").forEach((item) => {
-          item.classList.remove("active");
+        answer.classList.toggle("hidden");
+        icon.classList.toggle("active");
+      }
+
+      // Theme Change Function
+      function changeTheme(themeName) {
+        // Remove active class from all theme buttons
+        document.querySelectorAll(".theme-btn").forEach((btn) => {
+          btn.classList.remove("active");
         });
 
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-          faqItem.classList.add("active");
+        // Add active class to selected theme button
+        document.querySelector(`.theme-${themeName}`).classList.add("active");
+
+        // Update CSS variables based on selected theme
+        if (themeName === "orange") {
+          document.documentElement.style.setProperty(
+            "--theme-accent",
+            "#f97316"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary",
+            "#3b82f6"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-accent-rgb",
+            "249, 115, 22"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary-rgb",
+            "59, 130, 246"
+          );
+        } else if (themeName === "green") {
+          document.documentElement.style.setProperty(
+            "--theme-accent",
+            "#10b981"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary",
+            "#14b8a6"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-accent-rgb",
+            "16, 185, 129"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary-rgb",
+            "20, 184, 166"
+          );
+        } else if (themeName === "purple") {
+          document.documentElement.style.setProperty(
+            "--theme-accent",
+            "#8b5cf6"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary",
+            "#ec4899"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-accent-rgb",
+            "139, 92, 246"
+          );
+          document.documentElement.style.setProperty(
+            "--theme-secondary-rgb",
+            "236, 72, 153"
+          );
         }
+
+        // Store theme preference
+        localStorage.setItem("selectedTheme", themeName);
       }
+
+      // Add click event listeners to theme buttons
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".theme-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const themeName = this.classList[1]; // Get theme name from class
+            changeTheme(themeName);
+          });
+        });
+
+        // Load saved theme on page load
+        const savedTheme = localStorage.getItem("selectedTheme");
+        if (savedTheme) {
+          changeTheme(savedTheme);
+        } else {
+          changeTheme("orange"); // Default theme
+        }
+      });
 
       // Add intersection observer for animations
       const observerOptions = {
