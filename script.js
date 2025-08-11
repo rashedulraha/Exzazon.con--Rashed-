@@ -119,121 +119,212 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Testimonial Carousel
-const testimonialContainer = document.getElementById("testimonialContainer");
-const prevTestimonial = document.getElementById("prevTestimonial");
-const nextTestimonial = document.getElementById("nextTestimonial");
-const testimonialDots = document.querySelectorAll(".dot");
-const testimonialProgress = document.getElementById("testimonialProgress");
+document.addEventListener("DOMContentLoaded", function () {
+  // Testimonial Carousel Functionality
+  const testimonialContainer = document.getElementById("testimonialContainer");
+  const testimonials =
+    testimonialContainer.querySelectorAll(".testimonial-item");
+  const prevBtn = document.getElementById("prevTestimonial");
+  const nextBtn = document.getElementById("nextTestimonial");
+  const dots = document.querySelectorAll("#testimonialDots .dot");
+  const progressBar = document.getElementById("testimonialProgress");
+  const playPauseBtn = document.getElementById("autoplayToggle");
+  const playPauseIcon = document.getElementById("playPauseIcon");
+  const playPauseText = document.getElementById("playPauseText");
 
-let currentTestimonial = 0;
-const totalTestimonials = testimonialDots.length;
-let testimonialInterval;
+  let currentIndex = 0;
+  let autoplayInterval;
+  let progressInterval;
+  let isPlaying = true;
+  let slideWidth;
 
-function showTestimonial(index) {
-  const translateX = -index * (100 / totalTestimonials);
-  testimonialContainer.style.transform = `translateX(${translateX}%)`;
+  // Calculate slide width based on viewport
+  function calculateSlideWidth() {
+    return window.innerWidth < 768 ? 100 : 33.333; // Mobile: 100%, Desktop: 33.333%
+  }
 
-  // Update dots
-  testimonialDots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-    dot.classList.toggle("bg-brand-orange", i === index);
-    dot.classList.toggle("bg-gray-300", i !== index);
-  });
+  // Update slide positions
+  function updateSlidePosition() {
+    slideWidth = calculateSlideWidth();
+    testimonialContainer.style.transform = `translateX(-${
+      currentIndex * slideWidth
+    }%)`;
 
-  // Reset progress bar
-  testimonialProgress.style.width = "0%";
-  setTimeout(() => {
-    testimonialProgress.style.width = "100%";
-  }, 50);
-}
-
-function nextSlide() {
-  currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-  showTestimonial(currentTestimonial);
-}
-
-function prevSlide() {
-  currentTestimonial =
-    (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-  showTestimonial(currentTestimonial);
-}
-
-function startTestimonialAutoplay() {
-  testimonialInterval = setInterval(nextSlide, 5000);
-}
-
-function stopTestimonialAutoplay() {
-  clearInterval(testimonialInterval);
-}
-
-prevTestimonial.addEventListener("click", () => {
-  prevSlide();
-  stopTestimonialAutoplay();
-  startTestimonialAutoplay();
-});
-
-nextTestimonial.addEventListener("click", () => {
-  nextSlide();
-  stopTestimonialAutoplay();
-  startTestimonialAutoplay();
-});
-
-// Dot navigation
-testimonialDots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentTestimonial = index;
-    showTestimonial(currentTestimonial);
-    stopTestimonialAutoplay();
-    startTestimonialAutoplay();
-  });
-});
-
-// Start autoplay
-startTestimonialAutoplay();
-
-// Pause autoplay on hover
-const testimonialSection = document.querySelector("#testimonials");
-if (testimonialSection) {
-  testimonialSection.addEventListener("mouseenter", stopTestimonialAutoplay);
-  testimonialSection.addEventListener("mouseleave", startTestimonialAutoplay);
-}
-
-// Service Tabs
-const serviceTabs = document.querySelectorAll(".service-tab");
-const serviceCardItems = document.querySelectorAll(".service-card-item");
-
-serviceTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    // Remove active class from all tabs
-    serviceTabs.forEach((t) => {
-      t.classList.remove("active", "bg-brand-orange", "text-white");
-      t.classList.add("hover:bg-brand-orange", "hover:text-white");
-    });
-
-    // Add active class to clicked tab
-    tab.classList.add("active", "bg-brand-orange", "text-white");
-    tab.classList.remove("hover:bg-brand-orange", "hover:text-white");
-
-    // Filter service cards
-    const service = tab.getAttribute("data-service");
-    serviceCardItems.forEach((card) => {
-      if (service === "all" || card.getAttribute("data-category") === service) {
-        card.style.display = "block";
-        setTimeout(() => {
-          card.style.opacity = "1";
-          card.style.transform = "translateY(0)";
-        }, 10);
+    // Update dots
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add("bg-brand-orange");
+        dot.classList.remove("bg-gray-300");
+        dot.setAttribute("aria-selected", "true");
       } else {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        setTimeout(() => {
-          card.style.display = "none";
-        }, 300);
+        dot.classList.remove("bg-brand-orange");
+        dot.classList.add("bg-gray-300");
+        dot.setAttribute("aria-selected", "false");
       }
     });
+  }
+
+  // Go to specific slide
+  function goToSlide(index) {
+    const maxIndex =
+      window.innerWidth < 768
+        ? testimonials.length - 1
+        : Math.floor(testimonials.length / 3) - 1;
+    currentIndex = (index + maxIndex + 1) % (maxIndex + 1);
+    updateSlidePosition();
+    resetAutoplay();
+  }
+
+  // Next slide
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  // Previous slide
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  // Start autoplay
+  function startAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+    if (progressInterval) clearInterval(progressInterval);
+
+    isPlaying = true;
+    playPauseIcon.className = "fas fa-pause mr-2";
+    playPauseText.textContent = "Pause";
+
+    // Reset progress bar
+    progressBar.style.width = "0%";
+
+    // Progress bar animation
+    let progress = 0;
+    progressInterval = setInterval(() => {
+      progress += 2;
+      progressBar.style.width = `${progress}%`;
+      if (progress >= 100) {
+        clearInterval(progressInterval);
+      }
+    }, 100);
+
+    // Autoplay slides
+    autoplayInterval = setInterval(() => {
+      nextSlide();
+      // Reset progress bar
+      progress = 0;
+      progressBar.style.width = "0%";
+      progressInterval = setInterval(() => {
+        progress += 2;
+        progressBar.style.width = `${progress}%`;
+        if (progress >= 100) {
+          clearInterval(progressInterval);
+        }
+      }, 100);
+    }, 5000);
+  }
+
+  // Stop autoplay
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+    clearInterval(progressInterval);
+    isPlaying = false;
+    playPauseIcon.className = "fas fa-play mr-2";
+    playPauseText.textContent = "Play";
+    progressBar.style.width = "0%";
+  }
+
+  // Reset autoplay
+  function resetAutoplay() {
+    if (isPlaying) {
+      stopAutoplay();
+      startAutoplay();
+    }
+  }
+
+  // Event listeners
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    resetAutoplay();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetAutoplay();
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+      resetAutoplay();
+    });
+  });
+
+  playPauseBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  // Pause on hover
+  testimonialContainer.addEventListener("mouseenter", () => {
+    if (isPlaying) stopAutoplay();
+  });
+
+  testimonialContainer.addEventListener("mouseleave", () => {
+    if (isPlaying) startAutoplay();
+  });
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    updateSlidePosition();
+    resetAutoplay();
+  });
+
+  // Initialize
+  updateSlidePosition();
+  startAutoplay();
+
+  // Service Tabs (আপনার বিদ্যমান কোড)
+  const serviceTabs = document.querySelectorAll(".service-tab");
+  const serviceCardItems = document.querySelectorAll(".service-card-item");
+
+  serviceTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      serviceTabs.forEach((t) => {
+        t.classList.remove("active", "bg-brand-orange", "text-white");
+        t.classList.add("hover:bg-brand-orange", "hover:text-white");
+      });
+
+      // Add active class to clicked tab
+      tab.classList.add("active", "bg-brand-orange", "text-white");
+      tab.classList.remove("hover:bg-brand-orange", "hover:text-white");
+
+      // Filter service cards
+      const service = tab.getAttribute("data-service");
+      serviceCardItems.forEach((card) => {
+        if (
+          service === "all" ||
+          card.getAttribute("data-category") === service
+        ) {
+          card.style.display = "block";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 300);
+        }
+      });
+    });
   });
 });
-
 // FAQ Accordion
 function toggleFAQ(element) {
   const faqItem = element.parentElement;

@@ -733,7 +733,7 @@
           </div>
           <!-- Desktop Sign Up Button -->
           <button
-            class="hidden lg:block bg-brand-sunsetOrange text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
+            class="hidden lg:block bg-brand-sunsetOrange text-[#212121] dark:text-[white] px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
             onclick="showSignupModal()"
           >
             Sign Up
@@ -854,7 +854,7 @@
               </p>
             </div>
             <h1
-              class="text-4xl md:text-6xl font-bold mb-6 leading-tight hero-text"
+              class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white hero-text"
             >
               <span class="block">Transform Your</span>
               <span
@@ -2035,31 +2035,31 @@
         </div>
       </div>
     </section>
-    <!-- Testimonials Section -->
+
+    <!--? Testimonials Section -->
     <section
-      class="py-20 bg-[#2a3345] relative overflow-hidden dark:bg-brand-dark"
+      class="py-12 md:py-20 bg-[#2a3345] relative overflow-hidden dark:bg-brand-dark"
     >
       <!-- Background decoration -->
       <div
         class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
       >
         <div
-          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full animate-pulse"
+          class="absolute top-10 right-5 w-24 h-24 bg-brand-orange bg-opacity-5 rounded-full animate-pulse md:top-20 md:right-10 md:w-32 md:h-32"
         ></div>
         <div
-          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full animate-pulse"
+          class="absolute bottom-10 left-5 w-32 h-32 bg-brand-blue bg-opacity-5 rounded-full animate-pulse md:bottom-20 md:left-10 md:w-40 md:h-40"
         ></div>
         <div
-          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full animate-pulse"
+          class="absolute top-1/2 left-1/4 w-4 h-4 bg-brand-orange bg-opacity-10 rounded-full animate-pulse md:top-1/2 md:left-1/3 md:w-6 md:h-6"
         ></div>
         <div
-          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full animate-pulse"
+          class="absolute top-1/3 right-1/5 w-6 h-6 bg-brand-blue bg-opacity-10 rounded-full animate-pulse md:top-1/3 md:right-1/4 md:w-8 md:h-8"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-6">
+        <nav aria-label="breadcrumb" class="mb-4 md:mb-6">
           <ol class="breadcrumb flex items-center text-sm">
             <li class="breadcrumb-item mr-2">
               <a href="#" class="text-brand-orange hover:underline">Home</a>
@@ -2070,18 +2070,18 @@
             </li>
           </ol>
         </nav>
-
-        <div class="text-center mb-16" data-aos="fade-up">
+        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
-            <div class="w-12 h-0.5 bg-brand-orange"></div>
-            <span class="mx-4 text-brand-orange font-medium"
+            <div class="w-8 h-0.5 bg-brand-orange md:w-12"></div>
+            <span
+              class="mx-2 md:mx-4 text-brand-orange font-medium text-sm md:text-base"
               >Client Experience</span
             >
-            <div class="w-12 h-0.5 bg-brand-orange"></div>
+            <div class="w-8 h-0.5 bg-brand-orange md:w-12"></div>
           </div>
           <div class="text-center">
             <h2
-              class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block text-white dark:text-brand-light"
+              class="text-2xl md:text-4xl font-bold mb-4 section-title relative inline-block text-white dark:text-brand-light"
             >
               Client Testimonials
               <span
@@ -2089,13 +2089,12 @@
               ></span>
             </h2>
             <p
-              class="text-lg text-brand-secondary max-w-2xl mx-auto mt-6 dark:text-gray-300"
+              class="text-base md:text-lg text-brand-secondary max-w-2xl mx-auto mt-4 md:mt-6 dark:text-gray-300"
             >
               What our clients say about our services
             </p>
           </div>
         </div>
-
         <!-- Testimonial Carousel -->
         <div class="max-w-6xl mx-auto relative">
           <!-- Carousel container -->
@@ -2111,7 +2110,7 @@
                 data-aos-delay="100"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2119,16 +2118,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       A
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Abdul Karim
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         Electronics Business Owner
                       </p>
@@ -2136,13 +2137,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "With Exzazon's help, my online sales increased 3 times in 6
                     months. Their ROI-focused approach is exceptional!"
                   </p>
@@ -2151,10 +2164,11 @@
                     class="bg-brand-orange bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-chart-line text-brand-orange mr-2"
+                      class="fas fa-chart-line text-brand-orange mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-brand-orange font-medium"
+                    <span
+                      class="text-brand-orange font-medium text-sm md:text-base"
                       >300% Sales Increase</span
                     >
                   </div>
@@ -2163,11 +2177,10 @@
                     class="absolute bottom-4 right-4 text-brand-orange opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
-
               <!-- Testimonial 2 -->
               <div
                 class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
@@ -2175,7 +2188,7 @@
                 data-aos-delay="200"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2183,16 +2196,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       R
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Rahima Khatun
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         Real Estate Developer
                       </p>
@@ -2200,13 +2215,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "Virtual tours and targeted marketing for our projects have
                     rapidly increased sales. Excellent service!"
                   </p>
@@ -2215,10 +2242,11 @@
                     class="bg-brand-blue bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-home text-brand-blue mr-2"
+                      class="fas fa-home text-brand-blue mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-brand-blue font-medium"
+                    <span
+                      class="text-brand-blue font-medium text-sm md:text-base"
                       >65% Sales Increase</span
                     >
                   </div>
@@ -2227,11 +2255,10 @@
                     class="absolute bottom-4 right-4 text-brand-blue opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
-
               <!-- Testimonial 3 -->
               <div
                 class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
@@ -2239,7 +2266,7 @@
                 data-aos-delay="300"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2247,16 +2274,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       M
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Md. Sohel
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         Fashion Retailer
                       </p>
@@ -2264,13 +2293,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "Exzazon's performance-based model has been a game-changer
                     for us. They truly deliver results!"
                   </p>
@@ -2279,10 +2320,11 @@
                     class="bg-brand-btn bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-shopping-cart text-brand-btn mr-2"
+                      class="fas fa-shopping-cart text-brand-btn mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-brand-btn font-medium"
+                    <span
+                      class="text-brand-btn font-medium text-sm md:text-base"
                       >42% Conversion Rate</span
                     >
                   </div>
@@ -2291,11 +2333,10 @@
                     class="absolute bottom-4 right-4 text-brand-btn opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
-
               <!-- Testimonial 4 -->
               <div
                 class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
@@ -2303,7 +2344,7 @@
                 data-aos-delay="100"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2311,16 +2352,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-green-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       S
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Sultana Parvin
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         Restaurant Owner
                       </p>
@@ -2328,13 +2371,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "The digital marketing strategy transformed our online
                     presence. Our customer base grew by 200% in just 4 months!"
                   </p>
@@ -2343,10 +2398,11 @@
                     class="bg-green-500 bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-users text-green-500 mr-2"
+                      class="fas fa-users text-green-500 mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-green-500 font-medium"
+                    <span
+                      class="text-green-500 font-medium text-sm md:text-base"
                       >200% Customer Growth</span
                     >
                   </div>
@@ -2355,11 +2411,10 @@
                     class="absolute bottom-4 right-4 text-green-500 opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
-
               <!-- Testimonial 5 -->
               <div
                 class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
@@ -2367,7 +2422,7 @@
                 data-aos-delay="200"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2375,16 +2430,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-purple-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       T
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Tariqul Islam
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         Tech Startup Founder
                       </p>
@@ -2392,13 +2449,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "Their data-driven approach helped us identify our target
                     audience perfectly. Our app downloads increased by 350%!"
                   </p>
@@ -2407,10 +2476,11 @@
                     class="bg-purple-500 bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-mobile-alt text-purple-500 mr-2"
+                      class="fas fa-mobile-alt text-purple-500 mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-purple-500 font-medium"
+                    <span
+                      class="text-purple-500 font-medium text-sm md:text-base"
                       >350% App Downloads</span
                     >
                   </div>
@@ -2419,11 +2489,10 @@
                     class="absolute bottom-4 right-4 text-purple-500 opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
-
               <!-- Testimonial 6 -->
               <div
                 class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
@@ -2431,7 +2500,7 @@
                 data-aos-delay="300"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-6 md:p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
@@ -2439,16 +2508,18 @@
                   ></div>
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-16 h-16 bg-gradient-to-br from-red-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                      class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-red-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md"
                     >
                       N
                     </div>
                     <div class="ml-4">
-                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                      <h4
+                        class="font-semibold text-base md:text-lg dark:text-brand-light"
+                      >
                         Nusrat Jahan
                       </h4>
                       <p
-                        class="text-sm text-brand-secondary dark:text-gray-300"
+                        class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
                       >
                         E-commerce Store Owner
                       </p>
@@ -2456,13 +2527,25 @@
                   </div>
                   <!-- Rating -->
                   <div class="flex mb-4" role="img" aria-label="5 star rating">
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
-                    <i class="fas fa-star text-yellow-400"></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
+                    <i
+                      class="fas fa-star text-yellow-400 text-sm md:text-base"
+                    ></i>
                   </div>
-                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                  <p
+                    class="text-sm md:text-base text-brand-secondary mb-6 dark:text-gray-300"
+                  >
                     "The SEO optimization and social media campaign exceeded our
                     expectations. Our revenue doubled in just 3 months!"
                   </p>
@@ -2471,10 +2554,10 @@
                     class="bg-red-500 bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
                     <i
-                      class="fas fa-dollar-sign text-red-500 mr-2"
+                      class="fas fa-dollar-sign text-red-500 mr-2 text-sm md:text-base"
                       aria-hidden="true"
                     ></i>
-                    <span class="text-red-500 font-medium"
+                    <span class="text-red-500 font-medium text-sm md:text-base"
                       >100% Revenue Growth</span
                     >
                   </div>
@@ -2483,58 +2566,55 @@
                     class="absolute bottom-4 right-4 text-red-500 opacity-10"
                     aria-hidden="true"
                   >
-                    <i class="fas fa-quote-right text-4xl"></i>
+                    <i class="fas fa-quote-right text-3xl md:text-4xl"></i>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- Navigation arrows -->
           <button
             id="prevTestimonial"
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 md:-translate-x-12 w-8 h-8 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
             aria-label="Previous testimonial"
           >
-            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-left text-sm md:text-base"></i>
           </button>
           <button
             id="nextTestimonial"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 md:translate-x-12 w-8 h-8 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
             aria-label="Next testimonial"
           >
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right text-sm md:text-base"></i>
           </button>
-
           <!-- Dots indicator -->
           <div
-            class="flex justify-center mt-8 space-x-2"
+            class="flex justify-center mt-6 md:mt-8 space-x-2"
             id="testimonialDots"
             role="tablist"
           >
             <button
-              class="w-3 h-3 rounded-full bg-brand-orange transition-all duration-300 dot active"
+              class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-brand-orange transition-all duration-300 dot active"
               aria-label="Testimonial set 1"
               aria-selected="true"
               role="tab"
             ></button>
             <button
-              class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
+              class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
               aria-label="Testimonial set 2"
               aria-selected="false"
               role="tab"
             ></button>
             <button
-              class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
+              class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
               aria-label="Testimonial set 3"
               aria-selected="false"
               role="tab"
             ></button>
           </div>
-
           <!-- Auto-play progress bar -->
           <div
-            class="mt-6 h-1 bg-gray-200 rounded-full overflow-hidden max-w-md mx-auto dark:bg-gray-700"
+            class="mt-4 md:mt-6 h-1 bg-gray-200 rounded-full overflow-hidden max-w-md mx-auto dark:bg-gray-700"
           >
             <div
               class="h-full bg-brand-orange rounded-full transition-all duration-1000 ease-linear"
@@ -2542,65 +2622,89 @@
               style="width: 0%"
             ></div>
           </div>
-
           <!-- Play/Pause button -->
-          <div class="flex justify-center mt-4">
+          <div class="flex justify-center mt-3 md:mt-4">
             <button
               id="autoplayToggle"
-              class="flex items-center text-sm text-brand-secondary hover:text-brand-orange transition-colors dark:text-gray-300 dark:hover:text-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange rounded px-2 py-1"
+              class="flex items-center text-xs md:text-sm text-brand-secondary hover:text-brand-orange transition-colors dark:text-gray-300 dark:hover:text-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange rounded px-2 py-1"
               aria-label="Toggle autoplay"
             >
-              <i class="fas fa-pause mr-2" id="playPauseIcon"></i>
-              <span id="playPauseText">Pause</span>
+              <i
+                class="fas fa-pause mr-1 md:mr-2 text-xs md:text-sm"
+                id="playPauseIcon"
+              ></i>
+              <span id="playPauseText" class="text-xs md:text-sm">Pause</span>
             </button>
           </div>
         </div>
-
         <!-- Stats section -->
-        <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="mt-12 md:mt-20 max-w-4xl mx-auto" data-aos="fade-up">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center"
+          >
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
+              class="bg-white p-4 md:p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
-              <div class="text-3xl font-bold text-brand-orange mb-2">200+</div>
-              <div class="text-sm text-brand-secondary dark:text-gray-300">
+              <div
+                class="text-2xl md:text-3xl font-bold text-brand-orange mb-2"
+              >
+                200+
+              </div>
+              <div
+                class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
+              >
                 Happy Clients
               </div>
             </div>
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
+              class="bg-white p-4 md:p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
-              <div class="text-3xl font-bold text-brand-blue mb-2">95%</div>
-              <div class="text-sm text-brand-secondary dark:text-gray-300">
+              <div class="text-2xl md:text-3xl font-bold text-brand-blue mb-2">
+                95%
+              </div>
+              <div
+                class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
+              >
                 Success Rate
               </div>
             </div>
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
+              class="bg-white p-4 md:p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
-              <div class="text-3xl font-bold text-brand-btn mb-2">3x</div>
-              <div class="text-sm text-brand-secondary dark:text-gray-300">
+              <div class="text-2xl md:text-3xl font-bold text-brand-btn mb-2">
+                3x
+              </div>
+              <div
+                class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
+              >
                 Average Growth
               </div>
             </div>
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
+              class="bg-white p-4 md:p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
-              <div class="text-3xl font-bold text-brand-accent mb-2">24/7</div>
-              <div class="text-sm text-brand-secondary dark:text-gray-300">
+              <div
+                class="text-2xl md:text-3xl font-bold text-brand-accent mb-2"
+              >
+                24/7
+              </div>
+              <div
+                class="text-xs md:text-sm text-brand-secondary dark:text-gray-300"
+              >
                 Support
               </div>
             </div>
           </div>
         </div>
-
         <!-- Call to action -->
-        <div class="mt-16 text-center" data-aos="fade-up">
-          <p class="text-lg text-brand-secondary mb-6 dark:text-gray-300">
+        <div class="mt-10 md:mt-16 text-center" data-aos="fade-up">
+          <p
+            class="text-base md:text-lg text-brand-secondary mb-4 md:mb-6 dark:text-gray-300"
+          >
             Ready to join our success stories?
           </p>
           <button
-            class="bg-gradient-to-r from-brand-orange to-brand-accent text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-opacity-50"
+            class="bg-gradient-to-r from-brand-orange to-brand-accent text-white font-medium py-2 px-6 md:py-3 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-opacity-50 text-sm md:text-base"
           >
             Get Started Today
           </button>
@@ -2848,14 +2952,16 @@
         </div>
         <!-- Theme Selector -->
         <div class="flex justify-center mb-8">
-          <div class="bg-white p-2 dark:bg-gray-800 rounded-lg shadow p-2 flex">
+          <div
+            class="bg-white p-2 dark:bg-gray-800 rounded-lg shadow p-2 flex space-x-2"
+          >
             <button
-              class="theme-btn border border-[#532880] px-4 py-2 rounded-md mr-2 text-sm font-medium theme-orange active"
+              class="theme-btn px-4 border border-[#532880] py-2 rounded-md text-sm font-medium theme-purple active"
             >
               Orange-Blue
             </button>
             <button
-              class="theme-btn border border-[#532880] px-4 py-2 rounded-md mr-2 text-sm font-medium theme-green"
+              class="theme-btn px-4 border border-[#532880] py-2 rounded-md text-sm font-medium theme-purple"
             >
               Green-Teal
             </button>
@@ -3381,10 +3487,8 @@
             <div
               class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full blur-md opacity-70 animate-pulse"
             ></div>
-            <div
-              class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border bg-brand-orange"
-            >
-              <p class="text-yellow-300 text-sm font-medium flex items-center">
+            <div class="relative rounded-full px-5 py-3 border bg-brand-orange">
+              <p class="text-sm font-medium flex items-center">
                 <i class="fas fa-star mr-2"></i>
                 Start your business journey today
               </p>
@@ -3845,12 +3949,14 @@
           <p>
             &copy; 2023 EXZAZON. ||
             <a
-              class="text-[#ffffff]"
+              class="text-gray-900 dark:text-white hover:underline transition-colors duration-300"
               target="_blank"
               href="https://www.linkedin.com/in/rashedulraha/"
-              >Rashedul Islam</a
             >
-            || All rights reserved.
+              Rashedul Islam
+            </a>
+
+            > || All rights reserved.
           </p>
           <div class="mt-2 flex justify-center space-x-4 flex-wrap">
             <a href="#" class="hover:text-brand-cyberTeal transition-colors"
