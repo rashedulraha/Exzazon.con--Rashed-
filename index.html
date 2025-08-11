@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exzazon - Digital Marketing Solutions</title>
-
     <!-- Meta tags for SEO -->
     <meta
       name="description"
@@ -15,7 +14,6 @@
       content="digital marketing, Rajshahi, Bangladesh, performance marketing, real estate marketing, e-commerce solutions"
     />
     <meta name="author" content="Exzazon" />
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://exzazon.com/" />
@@ -28,7 +26,6 @@
       property="og:image"
       content="https://exzazon.com/images/og-image.jpg"
     />
-
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://exzazon.com/" />
@@ -44,7 +41,6 @@
       property="twitter:image"
       content="https://exzazon.com/images/og-image.jpg"
     />
-
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -72,30 +68,24 @@
         ]
       }
     </script>
-
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <!-- Barlow Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
     <!-- Custom Config -->
     <script>
       tailwind.config = {
@@ -154,7 +144,6 @@
         },
       };
     </script>
-
     <style>
       /* CSS Variables for consistent theming */
       :root {
@@ -172,7 +161,6 @@
         --theme-accent-rgb: 249, 115, 22;
         --theme-secondary-rgb: 59, 130, 246;
       }
-
       /* Base body styles */
       body {
         background-color: var(--light-bg);
@@ -180,13 +168,11 @@
         transition: background-color 0.3s ease, color 0.3s ease;
         font-family: "Barlow", sans-serif;
       }
-
       /* Dark mode styles */
       .dark body {
         background-color: var(--dark-bg);
         color: var(--dark-text);
       }
-
       /* Custom animations and styles */
       .gradient-bg {
         background: linear-gradient(
@@ -195,7 +181,6 @@
           var(--electric-violet) 100%
         );
       }
-
       .text-gradient {
         background: linear-gradient(
           90deg,
@@ -205,33 +190,26 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
       .card-hover {
         transition: all 0.3s ease;
       }
-
       .card-hover:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 25px -5px var(--shadow-color),
           0 10px 10px -5px var(--shadow-color);
       }
-
       .hero-pattern {
         background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6d00' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       }
-
       .service-icon {
         transition: all 0.3s ease;
       }
-
       .service-card:hover .service-icon {
         transform: scale(1.2) rotate(5deg);
       }
-
       .nav-link {
         position: relative;
       }
-
       .nav-link::after {
         content: "";
         position: absolute;
@@ -242,18 +220,15 @@
         background-color: var(--sunset-orange);
         transition: all 0.3s ease;
       }
-
       .nav-link:hover::after {
         width: 100%;
         left: 0;
       }
-
       .loader {
         border-top-color: var(--sunset-orange);
         -webkit-animation: spinner 1.5s linear infinite;
         animation: spinner 1.5s linear infinite;
       }
-
       @-webkit-keyframes spinner {
         0% {
           -webkit-transform: rotate(0deg);
@@ -262,7 +237,6 @@
           -webkit-transform: rotate(360deg);
         }
       }
-
       @keyframes spinner {
         0% {
           transform: rotate(0deg);
@@ -271,112 +245,87 @@
           transform: rotate(360deg);
         }
       }
-
       /* Dark mode specific styles */
       .dark .bg-white {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .text-brand-dark {
         color: var(--dark-text) !important;
       }
-
       .dark .bg-brand-light {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .text-brand-secondary {
         color: #b0b0b0 !important;
       }
-
       .dark .border-gray-300 {
         border-color: #444 !important;
       }
-
       .dark .bg-gray-50 {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .header-bg {
         background-color: rgba(10, 14, 46, 0.95) !important;
       }
-
       .dark .mobile-menu {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .testimonial-card {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .footer-bg {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .hero-text {
         color: #ffffff !important;
       }
-
       .dark .service-card {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .process-step {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .contact-form {
         background-color: var(--dark-bg) !important;
       }
-
       .dark input,
       .dark textarea {
         background-color: #1a1f3a !important;
         color: var(--dark-text) !important;
         border-color: #444 !important;
       }
-
       .dark input::placeholder,
       .dark textarea::placeholder {
         color: #b0b0b0 !important;
       }
-
       /* Responsive improvements */
       @media (max-width: 768px) {
         .hero-section {
           padding-top: 5rem;
           padding-bottom: 3rem;
         }
-
         .hero-title {
           font-size: 2rem !important;
           line-height: 1.2;
         }
-
         .hero-subtitle {
           font-size: 1rem !important;
         }
-
         .section-title {
           font-size: 1.8rem !important;
         }
-
         .service-card {
           margin-bottom: 1.5rem;
         }
-
         .process-step {
           padding: 1rem;
         }
-
         .testimonial-card {
           margin-bottom: 1.5rem;
         }
-
         .contact-info {
           margin-bottom: 2rem;
         }
-
         /* Mobile menu styles */
         .mobile-menu {
           position: fixed;
@@ -392,15 +341,12 @@
           transition: transform 0.3s ease-in-out;
           overflow-y: auto;
         }
-
         .mobile-menu.active {
           transform: translateX(0);
         }
-
         .dark .mobile-menu {
           background-color: var(--dark-bg);
         }
-
         .mobile-menu-header {
           display: flex;
           justify-content: space-between;
@@ -408,11 +354,9 @@
           padding: 1rem;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-
         .dark .mobile-menu-header {
           border-bottom-color: rgba(255, 255, 255, 0.1);
         }
-
         .mobile-menu-close {
           background: none;
           border: none;
@@ -420,19 +364,15 @@
           cursor: pointer;
           color: var(--light-text);
         }
-
         .dark .mobile-menu-close {
           color: var(--dark-text);
         }
-
         .mobile-menu-content {
           padding: 1.5rem;
         }
-
         .mobile-menu-nav {
           margin-bottom: 2rem;
         }
-
         .mobile-menu-nav a {
           display: block;
           padding: 0.75rem 0;
@@ -441,15 +381,12 @@
           font-weight: 500;
           transition: color 0.2s;
         }
-
         .dark .mobile-menu-nav a {
           color: var(--dark-text);
         }
-
         .mobile-menu-nav a:hover {
           color: var(--sunset-orange);
         }
-
         .mobile-menu-signup {
           width: 100%;
           padding: 0.75rem;
@@ -461,11 +398,9 @@
           cursor: pointer;
           transition: background-color 0.2s;
         }
-
         .mobile-menu-signup:hover {
           background-color: var(--neon-pink);
         }
-
         .mobile-menu-overlay {
           position: fixed;
           top: 0;
@@ -478,84 +413,67 @@
           visibility: hidden;
           transition: opacity 0.3s, visibility 0.3s;
         }
-
         .mobile-menu-overlay.active {
           opacity: 1;
           visibility: visible;
         }
       }
-
       /* Color adjustments */
       .btn-primary {
         background-color: var(--sunset-orange);
         color: white;
       }
-
       .btn-primary:hover {
         background-color: var(--neon-pink);
       }
-
       .btn-secondary {
         background-color: transparent;
         color: var(--cyber-teal);
         border: 2px solid var(--cyber-teal);
       }
-
       .btn-secondary:hover {
         background-color: var(--cyber-teal);
         color: white;
       }
-
       .dark .btn-secondary {
         color: #4d94ff;
         border-color: #4d94ff;
       }
-
       .dark .btn-secondary:hover {
         background-color: #4d94ff;
         color: white;
       }
-
       .dark .theme-menu {
         background-color: var(--dark-bg) !important;
       }
-
       .dark .theme-menu button {
         color: var(--dark-text);
       }
-
       .dark .theme-menu button:hover {
         background-color: var(--electric-violet);
       }
-
       /* Additional animations */
       .animate-gradient-x {
         background-size: 200% 200%;
         animation: gradient-x 3s ease infinite;
       }
-
       /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 10px;
       }
-
       ::-webkit-scrollbar-track {
         background: #f1f1f1;
       }
-
       ::-webkit-scrollbar-thumb {
         background: var(--sunset-orange);
         border-radius: 5px;
       }
-
       ::-webkit-scrollbar-thumb:hover {
         background: var(--neon-pink);
       }
-
       .dark ::-webkit-scrollbar-track {
         background: #1a1f3a;
       }
-
       /* Loading animation */
       .skeleton {
         background: linear-gradient(
@@ -567,7 +485,6 @@
         background-size: 200% 100%;
         animation: loading 1.5s infinite;
       }
-
       @keyframes loading {
         0% {
           background-position: 200% 0;
@@ -576,7 +493,6 @@
           background-position: -200% 0;
         }
       }
-
       /* Optimized borders */
       .optimized-border {
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -584,23 +500,19 @@
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
-
       .dark .optimized-border {
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
-
       /* Performance optimizations */
       .gpu-accelerated {
         transform: translateZ(0);
         backface-visibility: hidden;
         perspective: 1000px;
       }
-
       /* Image lazy loading */
       img {
         content-visibility: auto;
       }
-
       /* Form focus styles */
       input:focus,
       textarea:focus,
@@ -608,7 +520,6 @@
         outline: 2px solid var(--sunset-orange);
         outline-offset: 2px;
       }
-
       /* Responsive touch targets */
       @media (hover: none) {
         button,
@@ -616,7 +527,6 @@
           -webkit-tap-highlight-color: transparent;
         }
       }
-
       /* Breadcrumb styles */
       .breadcrumb {
         display: flex;
@@ -627,7 +537,6 @@
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 0.25rem;
       }
-
       .breadcrumb-item + .breadcrumb-item::before {
         display: inline-block;
         padding-right: 0.5rem;
@@ -635,59 +544,45 @@
         color: #6c757d;
         content: "/";
       }
-
       .breadcrumb-item.active {
         color: #6c757d;
       }
-
       /* Blog card styles */
       .blog-card {
         transition: all 0.3s ease;
       }
-
       .blog-card:hover {
         transform: translateY(-5px);
       }
-
       .blog-card .blog-image {
         height: 200px;
         object-fit: cover;
       }
-
       /* FAQ styles */
-
       .theme-accent-bg {
         background-color: var(--theme-accent);
       }
-
       .theme-secondary-bg {
         background-color: var(--theme-secondary);
       }
-
       .theme-accent-bg-opacity-5 {
         background-color: rgba(var(--theme-accent-rgb), 0.05);
       }
-
       .theme-secondary-bg-opacity-5 {
         background-color: rgba(var(--theme-secondary-rgb), 0.05);
       }
-
       .theme-accent-bg-opacity-10 {
         background-color: rgba(var(--theme-accent-rgb), 0.1);
       }
-
       .theme-secondary-bg-opacity-10 {
         background-color: rgba(var(--theme-secondary-rgb), 0.1);
       }
-
       .theme-accent-text {
         color: var(--theme-accent);
       }
-
       .theme-secondary-text {
         color: var(--theme-secondary);
       }
-
       .theme-gradient {
         background: linear-gradient(
           to right,
@@ -695,41 +590,33 @@
           var(--theme-secondary)
         );
       }
-
       /* Theme specific styles */
       .theme-orange.active {
         background: linear-gradient(to right, #f97316, #3b82f6);
         color: white;
       }
-
       .theme-green.active {
         background: linear-gradient(to right, #10b981, #14b8a6);
         color: white;
       }
-
       .theme-purple.active {
         background: linear-gradient(to right, #8b5cf6, #ec4899);
         color: white;
       }
-
       /* Theme switcher styles */
       .theme-btn {
         transition: all 0.2s ease;
       }
-
       .theme-btn:hover {
         transform: translateY(-2px);
       }
-
       /* FAQ specific styles */
       .faq-item {
         transition: all 0.3s ease;
       }
-
       .faq-answer {
         animation: fadeIn 0.3s ease-in-out;
       }
-
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -740,7 +627,6 @@
           transform: translateY(0);
         }
       }
-
       .faq-icon.active {
         transform: rotate(180deg);
       }
@@ -759,7 +645,6 @@
         <p class="text-brand-dark dark:text-brand-light">Loading...</p>
       </div>
     </div>
-
     <!-- Header -->
     <header
       class="bg-white shadow-lg sticky top-0 z-50 border-b border-brand-electricViolet header-bg gpu-accelerated dark:bg-brand-dark"
@@ -771,9 +656,8 @@
           <div class="text-3xl animate-pulse-slow text-brand-neonPink">⚡</div>
           <h1 class="text-2xl font-bold gradient-text">EXZAZON</h1>
         </div>
-
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8" aria-label="Main navigation">
+        <nav class="hidden lg:flex space-x-8" aria-label="Main navigation">
           <a
             href="#home"
             class="nav-link hover:text-brand-cyberTeal transition-colors"
@@ -810,7 +694,6 @@
             >Contact</a
           >
         </nav>
-
         <div class="flex items-center space-x-4">
           <div class="relative">
             <button
@@ -848,19 +731,17 @@
               </button>
             </div>
           </div>
-
           <!-- Desktop Sign Up Button -->
           <button
-            class="hidden md:block bg-brand-sunsetOrange text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
+            class="hidden lg:block bg-brand-sunsetOrange text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
             onclick="showSignupModal()"
           >
             Sign Up
           </button>
-
           <!-- Mobile Menu Button -->
           <button
             id="mobileMenuBtn"
-            class="md:hidden text-brand-cyberTeal"
+            class="lg:hidden text-brand-cyberTeal"
             aria-label="Toggle mobile menu"
             aria-expanded="false"
           >
@@ -872,28 +753,24 @@
         </div>
       </div>
     </header>
-
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
-
     <!-- Mobile Menu -->
     <div
       id="mobileMenu"
-      class="fixed inset-0 bg-brand-dark text-white z-50 transform translate-x-full transition-transform duration-300 md:hidden"
+      class="fixed inset-0 bg-brand-dark text-white z-50 transform translate-x-full transition-transform duration-300 lg:hidden"
     >
       <!-- Header -->
       <div
         class="flex justify-between items-center p-4 border-b border-gray-700"
       >
         <div class="flex items-center space-x-2">
-          <div class="text-2xl text-brand-neonPink">⚡</div>
-          <h2 class="text-xl font-bold">EXZAZON</h2>
+          <h2 class="text-xl font-bold"><span>⚡EXZAZON</span></h2>
         </div>
         <button id="mobileMenuClose" class="text-white text-2xl">
           <i class="fas fa-times"></i>
         </button>
       </div>
-
       <!-- Menu Content -->
       <div class="p-4">
         <nav
@@ -909,10 +786,9 @@
           <a href="#blog" class="mobile-nav-link">Blog</a>
           <a href="#contact" class="mobile-nav-link">Contact</a>
         </nav>
-
         <!-- Sign Up Button -->
         <button
-          class="mobile-menu-signup mt-6 bg-brand-sunsetOrange text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
+          class="mobile-menu-signup bg-brand-orange mt-6 bg-brand-sunsetOrange text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-neonPink transition-colors"
           onclick="showSignupModal(); closeMobileMenu();"
         >
           Sign Up
@@ -922,7 +798,7 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden hero-section"
+      class="pt-10 pb-20 md:pt-10 md:pb-28 relative overflow-hidden"
     >
       <!-- Unique animated background -->
       <div
@@ -931,7 +807,6 @@
         <div
           class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYxMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIGQ9Ik0wIDBoNjB2NjBIMHoiLz48L3N2Zz4=')] opacity-10 dark:opacity-5"
         ></div>
-
         <!-- Animated geometric shapes -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
           <div
@@ -945,7 +820,6 @@
             class="absolute bottom-1/4 left-1/4 w-24 h-24 bg-purple-500 rounded-full mix-blend-soft-light filter blur-xl opacity-30 animate-pulse-slow"
             style="animation-delay: 2s"
           ></div>
-
           <!-- Floating triangles -->
           <div
             class="absolute top-1/4 left-1/4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] border-b-white opacity-20 animate-float"
@@ -961,7 +835,6 @@
           ></div>
         </div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <div class="flex gap-12 flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
@@ -980,7 +853,6 @@
                 Best Digital Marketing Agency in Rajshahi
               </p>
             </div>
-
             <h1
               class="text-4xl md:text-6xl font-bold mb-6 leading-tight hero-text"
             >
@@ -991,12 +863,10 @@
                 Digital Presence
               </span>
             </h1>
-
             <p class="text-xl text-gray-200 mb-8 max-w-lg hero-subtitle">
               We create data-driven strategies that deliver measurable results
               and accelerate your business growth
             </p>
-
             <!-- Unique stats display -->
             <div class="flex flex-wrap gap-6 mb-8">
               <div class="group relative">
@@ -1033,9 +903,8 @@
                 ></div>
               </div>
             </div>
-
             <!-- Modern buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 item-center">
+            <div class="flex flex-col lg:flex-row gap-4 item-center">
               <button
                 class="group relative px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl gpu-accelerated"
                 onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
@@ -1061,7 +930,6 @@
                   class="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
               </button>
-
               <button
                 class="group relative px-8 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white/30 overflow-hidden transition-all duration-300 hover:border-white/60 hover:scale-105 gpu-accelerated"
                 onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
@@ -1095,7 +963,6 @@
               </button>
             </div>
           </div>
-
           <div
             class="md:w-1/2 flex justify-center"
             data-aos="fade-left"
@@ -1151,7 +1018,6 @@
                         stroke="rgba(255,255,255,0.2)"
                         stroke-width="1"
                       ></line>
-
                       <!-- Animated growth line -->
                       <path
                         d="M20,80 Q50,70 80,50 T140,30 L180,10"
@@ -1168,7 +1034,6 @@
                           repeatCount="indefinite"
                         ></animate>
                       </path>
-
                       <!-- Gradient definition -->
                       <defs>
                         <linearGradient
@@ -1182,7 +1047,6 @@
                           <stop offset="100%" stop-color="#8b5cf6"></stop>
                         </linearGradient>
                       </defs>
-
                       <!-- Animated dots -->
                       <circle cx="20" cy="80" r="4" fill="white">
                         <animate
@@ -1221,14 +1085,12 @@
                       </circle>
                     </svg>
                   </div>
-
                   <div class="text-center">
                     <div class="text-3xl font-bold text-white mb-2">+300%</div>
                     <div class="text-sm text-gray-200">Business Growth</div>
                   </div>
                 </div>
               </div>
-
               <!-- Floating elements -->
               <div
                 class="absolute -top-6 -right-6 w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center shadow-lg animate-bounce gpu-accelerated"
@@ -1249,7 +1111,6 @@
                   ></path>
                 </svg>
               </div>
-
               <div
                 class="absolute -bottom-6 -left-6 w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-bounce gpu-accelerated"
                 style="animation-delay: 0.5s"
@@ -1273,7 +1134,6 @@
           </div>
         </div>
       </div>
-
       <!-- Animated scroll indicator -->
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div class="flex flex-col items-center">
@@ -1288,7 +1148,6 @@
         </div>
       </div>
     </section>
-
     <!-- Mission & Vision Section -->
     <section
       id="about"
@@ -1311,7 +1170,6 @@
           class="absolute top-2/3 right-1/4 w-4 h-4 bg-brand-blue bg-opacity-20 rounded-full"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
@@ -1320,7 +1178,6 @@
             <li class="breadcrumb-item active" aria-current="page">About Us</li>
           </ol>
         </nav>
-
         <div
           class="flex flex-col item-center justify-center mb-16"
           data-aos="fade-up"
@@ -1330,7 +1187,6 @@
             <span class="mx-4 text-brand-orange font-medium">About Us</span>
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block"
@@ -1345,7 +1201,6 @@
             </p>
           </div>
         </div>
-
         <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <!-- Goal Card -->
           <div
@@ -1354,9 +1209,8 @@
           >
             <!-- Animated border -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-brand-btn to-brand-btn rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
             ></div>
-
             <!-- Card content -->
             <div
               class="relative bg-white p-8 rounded-2xl h-full dark:bg-brand-dark"
@@ -1384,13 +1238,11 @@
                   ></div>
                 </div>
               </div>
-
               <p class="text-lg text-brand-secondary mb-6 dark:text-gray-300">
                 To provide performance-based digital marketing solutions to
                 businesses across Bangladesh, starting from Rajshahi, ensuring
                 their sales growth and business development.
               </p>
-
               <!-- Key points -->
               <div class="space-y-3">
                 <div class="flex items-center">
@@ -1424,14 +1276,12 @@
                   >
                 </div>
               </div>
-
               <!-- Decorative element -->
               <div class="absolute bottom-4 right-4 opacity-10">
                 <i class="fas fa-bullseye text-6xl text-brand-orange"></i>
               </div>
             </div>
           </div>
-
           <!-- Vision Card -->
           <div
             class="group relative bg-white p-1 rounded-2xl shadow-lg card-hover overflow-hidden dark:bg-brand-dark optimized-border gpu-accelerated"
@@ -1439,9 +1289,8 @@
           >
             <!-- Animated border -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-brand-orange to-brand-accent rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"
             ></div>
-
             <!-- Card content -->
             <div
               class="relative bg-white p-8 rounded-2xl h-full dark:bg-brand-dark"
@@ -1469,13 +1318,11 @@
                   ></div>
                 </div>
               </div>
-
               <p class="text-lg text-brand-secondary mb-6 dark:text-gray-300">
                 To establish as the leading digital marketing partner in
                 Bangladesh, ensuring client success through ROI-focused results
                 and long-term business partnerships.
               </p>
-
               <!-- Key points -->
               <div class="space-y-3">
                 <div class="flex items-center">
@@ -1509,7 +1356,6 @@
                   >
                 </div>
               </div>
-
               <!-- Decorative element -->
               <div class="absolute bottom-4 right-4 opacity-10">
                 <i class="fas fa-eye text-6xl text-brand-orange"></i>
@@ -1517,7 +1363,6 @@
             </div>
           </div>
         </div>
-
         <!-- Values section -->
         <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
           <h3
@@ -1525,7 +1370,6 @@
           >
             Our Core Values
           </h3>
-
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div
               class="text-center border p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
@@ -1544,7 +1388,6 @@
                 New ideas and solutions
               </p>
             </div>
-
             <div
               class="text-center border p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1560,7 +1403,6 @@
                 Transparent and ethical business
               </p>
             </div>
-
             <div
               class="text-center border p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1576,7 +1418,6 @@
                 Measurable success
               </p>
             </div>
-
             <div
               class="text-center p-6 border bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1598,7 +1439,6 @@
         </div>
       </div>
     </section>
-
     <!-- Services Section -->
     <section
       id="services"
@@ -1621,7 +1461,6 @@
           class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
@@ -1630,14 +1469,12 @@
             <li class="breadcrumb-item active" aria-current="page">Services</li>
           </ol>
         </nav>
-
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
             <div class="w-12 h-0.5 bg-brand-orange"></div>
             <span class="mx-4 text-brand-orange font-medium">Our Services</span>
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block dark:text-brand-light"
@@ -1654,7 +1491,6 @@
             </p>
           </div>
         </div>
-
         <!-- Service Tabs -->
         <div
           class="flex flex-wrap justify-center mb-12"
@@ -1662,7 +1498,7 @@
           data-aos-delay="100"
         >
           <div
-            class="grid grid-cols-2 gap-4 md:inline-flex bg-white p-1 rounded-lg shadow-sm dark:bg-brand-dark optimized-border"
+            class="grid grid-cols-2 gap-4 md:inline-flex bg-white p-2 rounded-lg shadow-sm dark:bg-brand-dark optimized-border"
           >
             <button
               class="service-tab active bg-brand-orange text-white px-6 py-2 rounded-md text-sm font-medium transition-all duration-300"
@@ -1690,7 +1526,6 @@
             </button>
           </div>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <!-- Service Card 1 -->
           <div
@@ -1703,13 +1538,11 @@
             <div
               class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
             ></div>
-
             <div
               class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md gpu-accelerated"
             >
               <i class="fas fa-chart-line text-white text-2xl"></i>
             </div>
-
             <div class="flex justify-between items-start mb-4">
               <h3 class="text-xl font-semibold dark:text-brand-light">
                 Performance Marketing
@@ -1719,12 +1552,10 @@
                 >Popular</span
               >
             </div>
-
             <p class="text-brand-secondary mb-6 dark:text-gray-300">
               ROI-focused digital marketing campaigns that guarantee real
               results
             </p>
-
             <!-- Features -->
             <ul class="space-y-2 text-brand-secondary mb-6 dark:text-gray-300">
               <li class="flex items-center">
@@ -1740,7 +1571,6 @@
                 Conversion Optimization
               </li>
             </ul>
-
             <!-- Stats -->
             <div class="bg-gray-50 rounded-lg p-4 mb-6 dark:bg-brand-dark/50">
               <div class="flex justify-between items-center">
@@ -1750,14 +1580,12 @@
                 <span class="text-lg font-bold text-brand-orange">350%</span>
               </div>
             </div>
-
             <button
               class="w-full py-2 text-center text-brand-orange font-medium rounded-lg border border-brand-orange hover:bg-brand-orange hover:text-white transition-colors duration-300"
             >
               Learn More
             </button>
           </div>
-
           <!-- Service Card 2 -->
           <div
             class="service-card-item bg-white p-8 rounded-2xl shadow-lg card-hover service-card overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
@@ -1769,13 +1597,11 @@
             <div
               class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
             ></div>
-
             <div
               class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md gpu-accelerated"
             >
               <i class="fas fa-home text-white text-2xl"></i>
             </div>
-
             <div class="flex justify-between items-start mb-4">
               <h3 class="text-xl font-semibold dark:text-brand-light">
                 Real Estate Marketing
@@ -1785,11 +1611,9 @@
                 >Expert</span
               >
             </div>
-
             <p class="text-brand-secondary mb-6 dark:text-gray-300">
               Specialized marketing solutions for flat and property sales
             </p>
-
             <!-- Features -->
             <ul class="space-y-2 text-brand-secondary mb-6 dark:text-gray-300">
               <li class="flex items-center">
@@ -1805,7 +1629,6 @@
                 Targeted Advertising
               </li>
             </ul>
-
             <!-- Stats -->
             <div class="bg-gray-50 rounded-lg p-4 mb-6 dark:bg-brand-dark/50">
               <div class="flex justify-between items-center">
@@ -1815,14 +1638,12 @@
                 <span class="text-lg font-bold text-brand-blue">65%</span>
               </div>
             </div>
-
             <button
               class="w-full py-2 text-center text-brand-blue font-medium rounded-lg border border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-300"
             >
               Learn More
             </button>
           </div>
-
           <!-- Service Card 3 -->
           <div
             class="service-card-item bg-white p-8 rounded-2xl shadow-lg card-hover service-card overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
@@ -1834,13 +1655,11 @@
             <div
               class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btn to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
             ></div>
-
             <div
               class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center mb-6 service-icon group-hover:scale-110 transition-transform duration-300 shadow-md gpu-accelerated"
             >
               <i class="fas fa-shopping-cart text-white text-2xl"></i>
             </div>
-
             <div class="flex justify-between items-start mb-4">
               <h3 class="text-xl font-semibold dark:text-brand-light">
                 E-commerce Solutions
@@ -1850,11 +1669,9 @@
                 >New</span
               >
             </div>
-
             <p class="text-brand-secondary mb-6 dark:text-gray-300">
               Digital growth strategies for online stores and retail businesses
             </p>
-
             <!-- Features -->
             <ul class="space-y-2 text-brand-secondary mb-6 dark:text-gray-300">
               <li class="flex items-center">
@@ -1870,7 +1687,6 @@
                 Sales Funnel Setup
               </li>
             </ul>
-
             <!-- Stats -->
             <div class="bg-gray-50 rounded-lg p-4 mb-6 dark:bg-brand-dark/50">
               <div class="flex justify-between items-center">
@@ -1880,7 +1696,6 @@
                 <span class="text-lg font-bold text-brand-btn">42%</span>
               </div>
             </div>
-
             <button
               class="w-full py-2 text-center text-brand-btn font-medium rounded-lg border border-brand-btn hover:bg-brand-btn hover:text-white transition-colors duration-300"
             >
@@ -1888,13 +1703,11 @@
             </button>
           </div>
         </div>
-
         <!-- Additional Services -->
         <div class="mt-16 text-center" data-aos="fade-up">
           <h3 class="text-2xl font-bold mb-8 dark:text-brand-light">
             More Services
           </h3>
-
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div
               class="bg-white border p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
@@ -1913,7 +1726,6 @@
                 Strategic content creation
               </p>
             </div>
-
             <div
               class="bg-white p-6 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1929,7 +1741,6 @@
                 Search engine optimization
               </p>
             </div>
-
             <div
               class="bg-white p-6 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1947,7 +1758,6 @@
                 Video content production
               </p>
             </div>
-
             <div
               class="bg-white p-6 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group dark:bg-brand-dark dark:border-gray-700 optimized-border gpu-accelerated"
             >
@@ -1969,7 +1779,6 @@
         </div>
       </div>
     </section>
-
     <!-- Process Section -->
     <section
       id="process"
@@ -1992,7 +1801,6 @@
           class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
@@ -2003,14 +1811,12 @@
             </li>
           </ol>
         </nav>
-
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
             <div class="w-12 h-0.5 bg-brand-orange"></div>
             <span class="mx-4 text-brand-orange font-medium">How We Work</span>
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block dark:text-brand-light"
@@ -2027,20 +1833,17 @@
             </p>
           </div>
         </div>
-
         <div class="max-w-5xl mx-auto">
           <div class="relative">
             <!-- Process line -->
             <div
               class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-brand-orange to-brand-blue bg-opacity-30"
             ></div>
-
             <!-- Progress indicator -->
             <div
               class="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 h-0 bg-gradient-to-b from-brand-orange to-brand-blue transition-all duration-1000 ease-out"
               id="progressBar"
             ></div>
-
             <!-- Process Steps -->
             <div class="space-y-12">
               <!-- Step 1 -->
@@ -2071,16 +1874,13 @@
                     </div>
                   </div>
                 </div>
-
                 <div
                   class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110 gpu-accelerated"
                 >
                   1
                 </div>
-
                 <div class="w-1/2 pl-8"></div>
               </div>
-
               <!-- Step 2 -->
               <div
                 class="flex items-center process-step"
@@ -2088,13 +1888,11 @@
                 data-step="2"
               >
                 <div class="w-1/2 pr-8"></div>
-
                 <div
                   class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110 gpu-accelerated"
                 >
                   2
                 </div>
-
                 <div class="w-1/2 pl-8">
                   <div
                     class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
@@ -2117,7 +1915,6 @@
                   </div>
                 </div>
               </div>
-
               <!-- Step 3 -->
               <div
                 class="flex items-center process-step"
@@ -2145,16 +1942,13 @@
                     </div>
                   </div>
                 </div>
-
                 <div
                   class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110 gpu-accelerated"
                 >
                   3
                 </div>
-
                 <div class="w-1/2 pl-8"></div>
               </div>
-
               <!-- Step 4 -->
               <div
                 class="flex items-center process-step"
@@ -2162,13 +1956,11 @@
                 data-step="4"
               >
                 <div class="w-1/2 pr-8"></div>
-
                 <div
                   class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110 gpu-accelerated"
                 >
                   4
                 </div>
-
                 <div class="w-1/2 pl-8">
                   <div
                     class="inline-block px-3 py-1 bg-brand-orange bg-opacity-10 text-brand-orange rounded-full text-sm mb-3"
@@ -2191,7 +1983,6 @@
                   </div>
                 </div>
               </div>
-
               <!-- Step 5 -->
               <div
                 class="flex items-center process-step"
@@ -2219,18 +2010,15 @@
                     </div>
                   </div>
                 </div>
-
                 <div
                   class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold z-10 shadow-lg step-number transform transition-all duration-300 hover:scale-110 gpu-accelerated"
                 >
                   5
                 </div>
-
                 <div class="w-1/2 pl-8"></div>
               </div>
             </div>
           </div>
-
           <!-- Process CTA -->
           <div class="text-center mt-16" data-aos="fade-up">
             <div
@@ -2247,7 +2035,6 @@
         </div>
       </div>
     </section>
-
     <!-- Testimonials Section -->
     <section
       class="py-20 bg-[#2a3345] relative overflow-hidden dark:bg-brand-dark"
@@ -2257,25 +2044,28 @@
         class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
       >
         <div
-          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full"
+          class="absolute top-20 right-10 w-32 h-32 bg-brand-orange bg-opacity-5 rounded-full animate-pulse"
         ></div>
         <div
-          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full"
+          class="absolute bottom-20 left-10 w-40 h-40 bg-brand-blue bg-opacity-5 rounded-full animate-pulse"
         ></div>
         <div
-          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full"
+          class="absolute top-1/2 left-1/3 w-6 h-6 bg-brand-orange bg-opacity-10 rounded-full animate-pulse"
         ></div>
         <div
-          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
+          class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full animate-pulse"
         ></div>
       </div>
 
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
+        <nav aria-label="breadcrumb" class="mb-6">
+          <ol class="breadcrumb flex items-center text-sm">
+            <li class="breadcrumb-item mr-2">
+              <a href="#" class="text-brand-orange hover:underline">Home</a>
+              <span class="mx-2 text-gray-400">›</span>
+            </li>
+            <li class="breadcrumb-item text-gray-300" aria-current="page">
               Testimonials
             </li>
           </ol>
@@ -2289,7 +2079,6 @@
             >
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block text-white dark:text-brand-light"
@@ -2310,7 +2099,7 @@
         <!-- Testimonial Carousel -->
         <div class="max-w-6xl mx-auto relative">
           <!-- Carousel container -->
-          <div class="overflow-hidden">
+          <div class="overflow-hidden rounded-xl">
             <div
               class="flex transition-transform duration-500 ease-in-out"
               id="testimonialContainer"
@@ -2322,13 +2111,12 @@
                 data-aos-delay="100"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
                     class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
                   ></div>
-
                   <div class="flex items-center mb-4">
                     <div
                       class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
@@ -2346,34 +2134,34 @@
                       </p>
                     </div>
                   </div>
-
                   <!-- Rating -->
-                  <div class="flex mb-4">
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                   </div>
-
                   <p class="text-brand-secondary mb-6 dark:text-gray-300">
                     "With Exzazon's help, my online sales increased 3 times in 6
                     months. Their ROI-focused approach is exceptional!"
                   </p>
-
                   <!-- Result highlight -->
                   <div
                     class="bg-brand-orange bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
-                    <i class="fas fa-chart-line text-brand-orange mr-2"></i>
+                    <i
+                      class="fas fa-chart-line text-brand-orange mr-2"
+                      aria-hidden="true"
+                    ></i>
                     <span class="text-brand-orange font-medium"
                       >300% Sales Increase</span
                     >
                   </div>
-
                   <!-- Quote icon -->
                   <div
                     class="absolute bottom-4 right-4 text-brand-orange opacity-10"
+                    aria-hidden="true"
                   >
                     <i class="fas fa-quote-right text-4xl"></i>
                   </div>
@@ -2387,13 +2175,12 @@
                 data-aos-delay="200"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
                     class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
                   ></div>
-
                   <div class="flex items-center mb-4">
                     <div
                       class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
@@ -2411,34 +2198,34 @@
                       </p>
                     </div>
                   </div>
-
                   <!-- Rating -->
-                  <div class="flex mb-4">
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                   </div>
-
                   <p class="text-brand-secondary mb-6 dark:text-gray-300">
                     "Virtual tours and targeted marketing for our projects have
                     rapidly increased sales. Excellent service!"
                   </p>
-
                   <!-- Result highlight -->
                   <div
                     class="bg-brand-blue bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
-                    <i class="fas fa-home text-brand-blue mr-2"></i>
+                    <i
+                      class="fas fa-home text-brand-blue mr-2"
+                      aria-hidden="true"
+                    ></i>
                     <span class="text-brand-blue font-medium"
                       >65% Sales Increase</span
                     >
                   </div>
-
                   <!-- Quote icon -->
                   <div
                     class="absolute bottom-4 right-4 text-brand-blue opacity-10"
+                    aria-hidden="true"
                   >
                     <i class="fas fa-quote-right text-4xl"></i>
                   </div>
@@ -2452,13 +2239,12 @@
                 data-aos-delay="300"
               >
                 <div
-                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
                 >
                   <!-- Card top decoration -->
                   <div
                     class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btn to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
                   ></div>
-
                   <div class="flex items-center mb-4">
                     <div
                       class="w-16 h-16 bg-gradient-to-br from-brand-btn to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
@@ -2476,34 +2262,226 @@
                       </p>
                     </div>
                   </div>
-
                   <!-- Rating -->
-                  <div class="flex mb-4">
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                     <i class="fas fa-star text-yellow-400"></i>
                   </div>
-
                   <p class="text-brand-secondary mb-6 dark:text-gray-300">
                     "Exzazon's performance-based model has been a game-changer
                     for us. They truly deliver results!"
                   </p>
-
                   <!-- Result highlight -->
                   <div
                     class="bg-brand-btn bg-opacity-10 rounded-lg p-3 flex items-center"
                   >
-                    <i class="fas fa-shopping-cart text-brand-btn mr-2"></i>
+                    <i
+                      class="fas fa-shopping-cart text-brand-btn mr-2"
+                      aria-hidden="true"
+                    ></i>
                     <span class="text-brand-btn font-medium"
                       >42% Conversion Rate</span
                     >
                   </div>
-
                   <!-- Quote icon -->
                   <div
                     class="absolute bottom-4 right-4 text-brand-btn opacity-10"
+                    aria-hidden="true"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 4 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-green-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      S
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                        Sultana Parvin
+                      </h4>
+                      <p
+                        class="text-sm text-brand-secondary dark:text-gray-300"
+                      >
+                        Restaurant Owner
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Rating -->
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                    "The digital marketing strategy transformed our online
+                    presence. Our customer base grew by 200% in just 4 months!"
+                  </p>
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-green-500 bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i
+                      class="fas fa-users text-green-500 mr-2"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="text-green-500 font-medium"
+                      >200% Customer Growth</span
+                    >
+                  </div>
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-green-500 opacity-10"
+                    aria-hidden="true"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 5 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-purple-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      T
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                        Tariqul Islam
+                      </h4>
+                      <p
+                        class="text-sm text-brand-secondary dark:text-gray-300"
+                      >
+                        Tech Startup Founder
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Rating -->
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                    "Their data-driven approach helped us identify our target
+                    audience perfectly. Our app downloads increased by 350%!"
+                  </p>
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-purple-500 bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i
+                      class="fas fa-mobile-alt text-purple-500 mr-2"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="text-purple-500 font-medium"
+                      >350% App Downloads</span
+                    >
+                  </div>
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-purple-500 opacity-10"
+                    aria-hidden="true"
+                  >
+                    <i class="fas fa-quote-right text-4xl"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 6 -->
+              <div
+                class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div
+                  class="bg-white p-8 rounded-2xl shadow-lg testimonial-card h-full transform transition-all duration-300 hover:shadow-xl relative overflow-hidden group dark:bg-brand-dark optimized-border gpu-accelerated"
+                >
+                  <!-- Card top decoration -->
+                  <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  ></div>
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-red-500 to-brand-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md"
+                    >
+                      N
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="font-semibold text-lg dark:text-brand-light">
+                        Nusrat Jahan
+                      </h4>
+                      <p
+                        class="text-sm text-brand-secondary dark:text-gray-300"
+                      >
+                        E-commerce Store Owner
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Rating -->
+                  <div class="flex mb-4" role="img" aria-label="5 star rating">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-brand-secondary mb-6 dark:text-gray-300">
+                    "The SEO optimization and social media campaign exceeded our
+                    expectations. Our revenue doubled in just 3 months!"
+                  </p>
+                  <!-- Result highlight -->
+                  <div
+                    class="bg-red-500 bg-opacity-10 rounded-lg p-3 flex items-center"
+                  >
+                    <i
+                      class="fas fa-dollar-sign text-red-500 mr-2"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="text-red-500 font-medium"
+                      >100% Revenue Growth</span
+                    >
+                  </div>
+                  <!-- Quote icon -->
+                  <div
+                    class="absolute bottom-4 right-4 text-red-500 opacity-10"
+                    aria-hidden="true"
                   >
                     <i class="fas fa-quote-right text-4xl"></i>
                   </div>
@@ -2515,33 +2493,42 @@
           <!-- Navigation arrows -->
           <button
             id="prevTestimonial"
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
             aria-label="Previous testimonial"
           >
             <i class="fas fa-chevron-left"></i>
           </button>
-
           <button
             id="nextTestimonial"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 z-20 dark:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange"
             aria-label="Next testimonial"
           >
             <i class="fas fa-chevron-right"></i>
           </button>
 
           <!-- Dots indicator -->
-          <div class="flex justify-center mt-8 space-x-2" id="testimonialDots">
+          <div
+            class="flex justify-center mt-8 space-x-2"
+            id="testimonialDots"
+            role="tablist"
+          >
             <button
               class="w-3 h-3 rounded-full bg-brand-orange transition-all duration-300 dot active"
               aria-label="Testimonial set 1"
+              aria-selected="true"
+              role="tab"
             ></button>
             <button
               class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
               aria-label="Testimonial set 2"
+              aria-selected="false"
+              role="tab"
             ></button>
             <button
               class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 dot"
               aria-label="Testimonial set 3"
+              aria-selected="false"
+              role="tab"
             ></button>
           </div>
 
@@ -2555,40 +2542,49 @@
               style="width: 0%"
             ></div>
           </div>
+
+          <!-- Play/Pause button -->
+          <div class="flex justify-center mt-4">
+            <button
+              id="autoplayToggle"
+              class="flex items-center text-sm text-brand-secondary hover:text-brand-orange transition-colors dark:text-gray-300 dark:hover:text-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange rounded px-2 py-1"
+              aria-label="Toggle autoplay"
+            >
+              <i class="fas fa-pause mr-2" id="playPauseIcon"></i>
+              <span id="playPauseText">Pause</span>
+            </button>
+          </div>
         </div>
 
         <!-- Stats section -->
         <div class="mt-20 max-w-4xl mx-auto" data-aos="fade-up">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated"
+              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
               <div class="text-3xl font-bold text-brand-orange mb-2">200+</div>
               <div class="text-sm text-brand-secondary dark:text-gray-300">
                 Happy Clients
               </div>
             </div>
-
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated"
+              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
               <div class="text-3xl font-bold text-brand-blue mb-2">95%</div>
               <div class="text-sm text-brand-secondary dark:text-gray-300">
                 Success Rate
               </div>
             </div>
-
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated"
+              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
               <div class="text-3xl font-bold text-brand-btn mb-2">3x</div>
               <div class="text-sm text-brand-secondary dark:text-gray-300">
                 Average Growth
               </div>
             </div>
-
             <div
-              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated"
+              class="bg-white p-6 rounded-xl shadow-md dark:bg-brand-dark optimized-border gpu-accelerated transform transition-transform duration-300 hover:scale-105"
             >
               <div class="text-3xl font-bold text-brand-accent mb-2">24/7</div>
               <div class="text-sm text-brand-secondary dark:text-gray-300">
@@ -2597,9 +2593,20 @@
             </div>
           </div>
         </div>
+
+        <!-- Call to action -->
+        <div class="mt-16 text-center" data-aos="fade-up">
+          <p class="text-lg text-brand-secondary mb-6 dark:text-gray-300">
+            Ready to join our success stories?
+          </p>
+          <button
+            class="bg-gradient-to-r from-brand-orange to-brand-accent text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-opacity-50"
+          >
+            Get Started Today
+          </button>
+        </div>
       </div>
     </section>
-
     <!-- Blog Section (NEW) -->
     <section
       id="blog"
@@ -2622,7 +2629,6 @@
           class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
@@ -2631,7 +2637,6 @@
             <li class="breadcrumb-item active" aria-current="page">Blog</li>
           </ol>
         </nav>
-
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
             <div class="w-12 h-0.5 bg-brand-orange"></div>
@@ -2640,7 +2645,6 @@
             >
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block dark:text-brand-light"
@@ -2657,7 +2661,6 @@
             </p>
           </div>
         </div>
-
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <!-- Blog Card 1 -->
           <div
@@ -2702,7 +2705,6 @@
               >
             </div>
           </div>
-
           <!-- Blog Card 2 -->
           <div
             class="blog-card bg-white rounded-xl shadow-lg overflow-hidden dark:bg-brand-dark optimized-border gpu-accelerated"
@@ -2745,7 +2747,6 @@
               >
             </div>
           </div>
-
           <!-- Blog Card 3 -->
           <div
             class="blog-card bg-white rounded-xl shadow-lg overflow-hidden dark:bg-brand-dark optimized-border gpu-accelerated"
@@ -2789,7 +2790,6 @@
             </div>
           </div>
         </div>
-
         <!-- View All Button -->
         <div class="text-center mt-12" data-aos="fade-up">
           <button
@@ -2800,7 +2800,6 @@
         </div>
       </div>
     </section>
-
     <!-- FAQ Section (NEW) -->
     <section
       class="py-20 bg-gray-50 relative overflow-hidden dark:bg-brand-dark"
@@ -2822,7 +2821,6 @@
           class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full theme-secondary-bg-opacity-10"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
@@ -2848,7 +2846,6 @@
             </p>
           </div>
         </div>
-
         <!-- Theme Selector -->
         <div class="flex justify-center mb-8">
           <div class="bg-white p-2 dark:bg-gray-800 rounded-lg shadow p-2 flex">
@@ -2869,7 +2866,6 @@
             </button>
           </div>
         </div>
-
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
           <div
             class="bg-white rounded-xl shadow-lg overflow-hidden dark:bg-brand-dark optimized-border"
@@ -2896,7 +2892,6 @@
                 </p>
               </div>
             </div>
-
             <!-- FAQ Item 2 -->
             <div class="faq-item border-b border-gray-100 dark:border-gray-700">
               <div
@@ -2919,7 +2914,6 @@
                 </p>
               </div>
             </div>
-
             <!-- FAQ Item 3 -->
             <div class="faq-item border-b border-gray-100 dark:border-gray-700">
               <div
@@ -2941,7 +2935,6 @@
                 </p>
               </div>
             </div>
-
             <!-- FAQ Item 4 -->
             <div class="faq-item border-b border-gray-100 dark:border-gray-700">
               <div
@@ -2964,7 +2957,6 @@
                 </p>
               </div>
             </div>
-
             <!-- FAQ Item 5 -->
             <div class="faq-item">
               <div
@@ -3013,7 +3005,6 @@
           class="absolute top-1/3 right-1/4 w-8 h-8 bg-brand-blue bg-opacity-10 rounded-full"
         ></div>
       </div>
-
       <div class="container mx-auto px-4 relative z-10">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb">
@@ -3024,14 +3015,12 @@
             </li>
           </ol>
         </nav>
-
         <div class="text-center mb-16" data-aos="fade-up">
           <div class="inline-flex items-center justify-center mb-4">
             <div class="w-12 h-0.5 bg-brand-orange"></div>
             <span class="mx-4 text-brand-orange font-medium">Contact Us</span>
             <div class="w-12 h-0.5 bg-brand-orange"></div>
           </div>
-
           <div class="text-center">
             <h2
               class="text-3xl md:text-4xl font-bold mb-4 section-title relative inline-block dark:text-brand-light"
@@ -3048,7 +3037,6 @@
             </p>
           </div>
         </div>
-
         <div class="max-w-5xl mx-auto">
           <div class="grid md:grid-cols-2 gap-12">
             <!-- Contact Info -->
@@ -3068,7 +3056,6 @@
                   Contact us and get our services for your business growth
                 </p>
               </div>
-
               <div class="space-y-6">
                 <!-- Address -->
                 <div
@@ -3093,7 +3080,6 @@
                     </p>
                   </div>
                 </div>
-
                 <!-- Phone -->
                 <div class="flex items-start group">
                   <div
@@ -3118,7 +3104,6 @@
                     </p>
                   </div>
                 </div>
-
                 <!-- Email -->
                 <div class="flex items-start group">
                   <div
@@ -3143,7 +3128,6 @@
                     </p>
                   </div>
                 </div>
-
                 <!-- Working Hours -->
                 <div class="flex items-start group">
                   <div
@@ -3168,7 +3152,6 @@
                   </div>
                 </div>
               </div>
-
               <!-- Social Media -->
               <div class="mt-10">
                 <h4
@@ -3184,7 +3167,7 @@
                 <div class="flex space-x-4">
                   <a
                     href="#"
-                    class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white hover:bg-brand-accent transition-all duration-300 transform hover:scale-110 shadow-md gpu-accelerated"
+                    class="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:bg-brand-accent transition-all duration-300 transform hover:scale-110 shadow-md gpu-accelerated"
                     title="Facebook"
                     aria-label="Facebook"
                   >
@@ -3192,7 +3175,7 @@
                   </a>
                   <a
                     href="#"
-                    class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-md gpu-accelerated"
+                    class="w-12 h-12 bg-[#0077B5] rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-md gpu-accelerated"
                     title="LinkedIn"
                     aria-label="LinkedIn"
                   >
@@ -3216,19 +3199,19 @@
                   </a>
                 </div>
               </div>
-
               <!-- Map Preview -->
               <div
                 class="mt-8 rounded-xl overflow-hidden shadow-lg h-48 relative"
                 data-aos="zoom-in"
+                id="mapContainer"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                  alt="Map"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                <!-- Default Image -->
+                <img class=" id="mapImage" src="./img/map.jpg" alt="Map"
+                class="w-full h-full object-cover" loading="lazy" />
+
+                <!-- Overlay + Button -->
                 <div
+                  id="overlay"
                   class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
                 >
                   <button
@@ -3240,13 +3223,28 @@
                   </button>
                 </div>
               </div>
-            </div>
 
+              <script>
+                function openMap() {
+                  const mapContainer = document.getElementById("mapContainer");
+
+                  mapContainer.innerHTML = `
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116227.31522909676!2d88.50711638809528!3d24.447190669245384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbf20bc9feeae9%3A0x98b1db6c28ac06f7!2sPaba!5e0!3m2!1sen!2sbd!4v1754905857274!5m2!1sen!2sbd"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    `;
+                }
+              </script>
+            </div>
             <!-- Contact Form -->
             <div data-aos="fade-left">
-              <div
-                class="bg-gradient-to-br from-brand-orange to-brand-blue p-1 rounded-2xl shadow-xl"
-              >
+              <div class="p-1 rounded-2xl shadow-xl">
                 <form
                   id="contactForm"
                   class="bg-white p-8 rounded-2xl contact-form dark:bg-brand-dark optimized-border"
@@ -3261,7 +3259,6 @@
                     </span>
                     Send a Message
                   </h3>
-
                   <!-- Form Fields -->
                   <div class="space-y-4">
                     <!-- Name -->
@@ -3280,7 +3277,6 @@
                         >Name *</label
                       >
                     </div>
-
                     <!-- Email -->
                     <div class="relative">
                       <input
@@ -3297,7 +3293,6 @@
                         >Email *</label
                       >
                     </div>
-
                     <!-- Phone -->
                     <div class="relative">
                       <input
@@ -3314,7 +3309,6 @@
                         >Phone Number *</label
                       >
                     </div>
-
                     <!-- Message -->
                     <div class="relative">
                       <textarea
@@ -3332,11 +3326,10 @@
                       >
                     </div>
                   </div>
-
                   <!-- Submit Button -->
                   <button
                     type="submit"
-                    class="w-full bg-gradient-to-r from-brand-orange to-brand-blue text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] shadow-md mt-6 flex items-center justify-center"
+                    class="w-full py-3 text-brand-blue rounded-lg font-semibold border border-brand-blue hover:bg-brand-blue hover:text-white transition-colors duration-300 transform hover:scale-[1.02] shadow-md mt-6 flex items-center justify-center"
                     id="submitBtn"
                   >
                     <span id="btnText">Send</span>
@@ -3344,7 +3337,6 @@
                   </button>
                 </form>
               </div>
-
               <!-- Success Message -->
               <div
                 id="successMessage"
@@ -3362,159 +3354,282 @@
         </div>
       </div>
     </section>
-
     <!-- CTA Section -->
-    <section
-      class="py-20 relative overflow-hidden"
-      style="background-color: #2a3345"
-    >
+    <section class="py-20 relative overflow-hidden">
       <!-- Background decoration -->
       <div class="absolute inset-0 overflow-hidden">
         <!-- Animated background shapes -->
         <div
-          class="absolute top-0 left-0 w-64 h-64 bg-brand-orange bg-opacity-10 rounded-full filter blur-3xl animate-pulse-slow"
+          class="absolute top-0 left-0 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
         ></div>
         <div
-          class="absolute bottom-0 right-0 w-72 h-72 bg-brand-blue bg-opacity-10 rounded-full filter blur-3xl animate-pulse-slow"
-          style="animation-delay: 1s"
-        ></div>
-
-        <!-- Grid pattern -->
-        <div class="absolute inset-0 opacity-10">
-          <div
-            class="h-full w-full"
-            style="
-              background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.2%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-            "
-          ></div>
-        </div>
-
-        <!-- Floating particles -->
-        <div
-          class="absolute top-1/4 left-1/4 w-3 h-3 bg-white bg-opacity-20 rounded-full animate-bounce"
-        ></div>
-        <div
-          class="absolute top-1/3 right-1/4 w-2 h-2 bg-white bg-opacity-30 rounded-full animate-bounce"
-          style="animation-delay: 0.5s"
-        ></div>
-        <div
-          class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-white bg-opacity-20 rounded-full animate-bounce"
+          class="absolute bottom-0 right-0 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
           style="animation-delay: 1s"
         ></div>
         <div
-          class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-white bg-opacity-30 rounded-full animate-bounce"
-          style="animation-delay: 1.5s"
+          class="absolute top-1/2 left-1/4 w-8 h-8 bg-yellow-400 rounded-full opacity-30"
+        ></div>
+        <div
+          class="absolute top-1/3 right-1/4 w-10 h-10 bg-blue-400 rounded-full opacity-30"
         ></div>
       </div>
 
-      <div class="container mx-auto px-4 text-center relative z-10">
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="mb-6 inline-block px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-full optimized-border"
-            data-aos="fade-up"
-          >
-            <p class="text-white text-sm font-medium flex items-center">
-              <i class="fas fa-star text-yellow-300 mr-2"></i>
-              Start your business journey today
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Animated badge -->
+          <div class="mb-8 inline-block relative" data-aos="fade-up">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full blur-md opacity-70 animate-pulse"
+            ></div>
+            <div
+              class="relative bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border bg-brand-orange"
+            >
+              <p class="text-yellow-300 text-sm font-medium flex items-center">
+                <i class="fas fa-star mr-2"></i>
+                Start your business journey today
+              </p>
+            </div>
+          </div>
+
+          <!-- Main heading with animated underline -->
+          <div class="mb-10" data-aos="fade-up" data-aos-delay="100">
+            <h2
+              class="text-4xl md:text-6x md:text-center font-bold text-gray-900 dark:text-white leading-tight mb-4"
+            >
+              Transform Your
+              <span class="relative inline-block">
+                <span
+                  class="text-transparent bg-clip-text bg-brand-orange via-yellow-400 to-yellow-300 animate-gradient-x"
+                >
+                  Business Growth
+                </span>
+                <svg
+                  class="absolute -bottom-2 left-0 w-full"
+                  viewBox="0 0 200 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,5 C25,2 50,8 75,5 C100,2 125,8 150,5 C175,2 200,5 200,5"
+                    stroke="#F59E0B"
+                    stroke-width="3"
+                    fill="none"
+                  ></path>
+                </svg>
+              </span>
+            </h2>
+            <p
+              class="text-xl md:text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
+            >
+              Partner with Exzazon to unlock your business potential and achieve
+              remarkable results
             </p>
           </div>
 
-          <h2
-            class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
-            data-aos="fade-up"
-          >
-            Grow Your
-            <span class="text-yellow-300 relative">
-              Business
-              <svg
-                class="absolute -bottom-2 left-0 w-full"
-                viewBox="0 0 200 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,5 C25,2 50,8 75,5 C100,2 125,8 150,5 C175,2 200,5 200,5"
-                  stroke="#FFD700"
-                  stroke-width="3"
-                  fill="none"
-                ></path>
-              </svg>
-            </span>
-            With Us Now
-          </h2>
-
-          <p
-            class="text-xl text-white text-opacity-90 mb-10 max-w-2xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Partner with Exzazon to take your business to new heights
-          </p>
-
-          <!-- Stats -->
+          <!-- Stats cards with icons -->
           <div
-            class="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="150"
-          >
-            <div class="text-center">
-              <div class="text-3xl font-bold text-white mb-1">200+</div>
-              <div class="text-sm text-white text-opacity-80">
-                Happy Clients
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-white mb-1">95%</div>
-              <div class="text-sm text-white text-opacity-80">Success Rate</div>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-white mb-1">3x</div>
-              <div class="text-sm text-white text-opacity-80">
-                Average Growth
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col justify-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="200"
           >
+            <div
+              class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <div
+                class="text-5xl md:text-center font-bold text-brand-orange dark:text-yellow-400 mb-2"
+              >
+                200+
+              </div>
+              <div
+                class="flex items-center justify-center text-gray-700 dark:text-gray-300"
+              >
+                <i
+                  class="fas fa-users mr-2 text-yellow-500 dark:text-yellow-400"
+                ></i>
+                <span>Happy Clients</span>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <div
+                class="text-5xl md:text-center font-bold text-brand-orange dark:text-yellow-400 mb-2"
+              >
+                95%
+              </div>
+              <div
+                class="flex items-center justify-center text-gray-700 dark:text-gray-300"
+              >
+                <i
+                  class="fas fa-chart-line mr-2 text-yellow-500 dark:text-yellow-400"
+                ></i>
+                <span>Success Rate</span>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <div
+                class="text-5xl font-bold md:text-center text-brand-orange dark:text-yellow-400 mb-2"
+              >
+                3x
+              </div>
+              <div
+                class="flex items-center justify-center text-gray-700 dark:text-gray-300"
+              >
+                <i
+                  class="fas fa-rocket mr-2 text-yellow-500 dark:text-yellow-400"
+                ></i>
+                <span>Average Growth</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons with enhanced design -->
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <button
-              class="bg-white text-brand-orange px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-brand-light transition-all duration-300 transform hover:scale-105 flex items-center justify-center group gpu-accelerated"
+              class="group relative px-5 py-3 bg-gradient-to-r from-yellow-500 to-yellow-300 text-gray-900 font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
               id="ctaButton"
               onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
             >
-              <span>Contact Us Today</span>
-              <i
-                class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
-              ></i>
+              <span class="relative z-10 flex items-center">
+                Get Started Now
+                <i
+                  class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform duration-300"
+                ></i>
+              </span>
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
             </button>
-            <a
-              href="tel:+8801712345678"
-              class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brand-orange transition-all duration-300 flex items-center justify-center"
-            >
-              <i class="fas fa-phone-alt mr-2"></i>
-              <span>Call: +880 1712-345678</span>
-            </a>
+
+            <div class="relative group">
+              <div
+                class="absolute -inset-1 border rounded-full blur-md group-hover:opacity-75 transition duration-300"
+              ></div>
+              <a
+                href="tel:+8801712345678"
+                class="relative px-5 py-3 bg-transparent border-2 border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 font-bold text-lg rounded-full flex items-center hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-gray-800 transition-all duration-300"
+              >
+                <i class="fas fa-phone-alt mr-3"></i>
+                <span>Call Us Now</span>
+              </a>
+            </div>
           </div>
 
-          <!-- Trust indicators -->
+          <!-- Email Capture Form -->
           <div
-            class="mt-16 grid grid-cols-1 md:grid-cols-3 justify-center space-x-8"
+            class="max-w-xl mx-auto mb-12"
             data-aos="fade-up"
-            data-aos-delay="250"
+            data-aos-delay="350"
           >
-            <div class="flex items-center text-white text-opacity-80">
-              <i class="fas fa-shield-alt mr-2"></i>
-              <span>Secure Payment</span>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+              <h3
+                class="text-xl font-semibold text-gray-900 dark:text-white mb-4"
+              >
+                Get Free Consultation
+              </h3>
+              <form class="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="flex-1 px-4 py-3 rounded-lg bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:focus:ring-yellow-400"
+                />
+                <button
+                  type="submit"
+                  class="px-6 py-3 bg-brand-orange dark:bg-yellow-400 text-white dark:text-gray-900 font-medium rounded-lg hover:bg-yellow-600 dark:hover:bg-yellow-500 transition-colors duration-300"
+                >
+                  Submit
+                </button>
+              </form>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mt-3">
+                Join 200+ businesses growing with us
+              </p>
             </div>
-            <div class="flex items-center text-white text-opacity-80">
-              <i class="fas fa-lock mr-2"></i>
-              <span>Data Privacy</span>
+          </div>
+
+          <!-- Trust indicators with animated icons -->
+          <div
+            class="flex flex-wrap justify-center gap-10"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="flex flex-col items-center group transform transition-all duration-300 hover:scale-110"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mb-3 border border-gray-300 dark:border-gray-600 transition-all duration-300 group-hover:border-yellow-500 dark:group-hover:border-yellow-400"
+              >
+                <i
+                  class="fas fa-shield-alt text-2xl text-gray-600 dark:text-gray-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400"
+                ></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Secure Payment</span
+              >
             </div>
-            <div class="flex items-center text-white text-opacity-80">
-              <i class="fas fa-headset mr-2"></i>
-              <span>24/7 Support</span>
+
+            <div
+              class="flex flex-col items-center group transform transition-all duration-300 hover:scale-110"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mb-3 border border-gray-300 dark:border-gray-600 transition-all duration-300 group-hover:border-yellow-500 dark:group-hover:border-yellow-400"
+              >
+                <i
+                  class="fas fa-lock text-2xl text-gray-600 dark:text-gray-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400"
+                ></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Data Privacy</span
+              >
+            </div>
+
+            <div
+              class="flex flex-col items-center group transform transition-all duration-300 hover:scale-110"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mb-3 border border-gray-300 dark:border-gray-600 transition-all duration-300 group-hover:border-yellow-500 dark:group-hover:border-yellow-400"
+              >
+                <i
+                  class="fas fa-headset text-2xl text-gray-600 dark:text-gray-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400"
+                ></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >24/7 Support</span
+              >
+            </div>
+
+            <div
+              class="flex flex-col items-center group transform transition-all duration-300 hover:scale-110"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mb-3 border border-gray-300 dark:border-gray-600 transition-all duration-300 group-hover:border-yellow-500 dark:group-hover:border-yellow-400"
+              >
+                <i
+                  class="fas fa-certificate text-2xl text-gray-600 dark:text-gray-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400"
+                ></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Certified Experts</span
+              >
+            </div>
+
+            <div
+              class="flex flex-col items-center group transform transition-all duration-300 hover:scale-110"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mb-3 border border-gray-300 dark:border-gray-600 transition-all duration-300 group-hover:border-yellow-500 dark:group-hover:border-yellow-400"
+              >
+                <i
+                  class="fas fa-handshake text-2xl text-gray-600 dark:text-gray-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400"
+                ></i>
+              </div>
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Satisfaction Guarantee</span
+              >
             </div>
           </div>
         </div>
@@ -3535,7 +3650,6 @@
         </svg>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-brand-deepNavy text-white py-12 dark:bg-brand-dark">
       <div class="container mx-auto px-4">
@@ -3588,7 +3702,6 @@
               </a>
             </div>
           </div>
-
           <div data-aos="fade-up" data-aos-delay="100">
             <h4 class="text-lg font-semibold mb-4 text-brand-lightText">
               Quick Links
@@ -3638,7 +3751,6 @@
               </li>
             </ul>
           </div>
-
           <div data-aos="fade-up" data-aos-delay="200">
             <h4 class="text-lg font-semibold mb-4 text-brand-lightText">
               Categories
@@ -3681,7 +3793,6 @@
               </li>
             </ul>
           </div>
-
           <div data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-lg font-semibold mb-4 text-brand-lightText">
               Contact Us
@@ -3704,7 +3815,6 @@
                 <span class="text-gray-400">info@exzazon.com</span>
               </li>
             </ul>
-
             <h4 class="text-lg font-semibold mb-4 mt-6 text-brand-lightText">
               Newsletter
             </h4>
@@ -3729,7 +3839,6 @@
             </div>
           </div>
         </div>
-
         <div
           class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
         >
@@ -3757,7 +3866,6 @@
         </div>
       </div>
     </footer>
-
     <!-- Back to top button -->
     <button
       id="backToTop"
@@ -3766,7 +3874,6 @@
     >
       <i class="fas fa-arrow-up"></i>
     </button>
-
     <!-- Signup Modal -->
     <div
       id="signupModal"
@@ -3790,7 +3897,6 @@
             <i class="fas fa-times"></i>
           </button>
         </div>
-
         <form id="signupForm">
           <div class="mb-4">
             <label
@@ -3806,7 +3912,6 @@
               aria-required="true"
             />
           </div>
-
           <div class="mb-4">
             <label
               for="signupEmail"
@@ -3821,7 +3926,6 @@
               aria-required="true"
             />
           </div>
-
           <div class="mb-4">
             <label
               for="signupPassword"
@@ -3836,7 +3940,6 @@
               aria-required="true"
             />
           </div>
-
           <div class="mb-6">
             <label
               for="signupPhone"
@@ -3851,7 +3954,6 @@
               aria-required="true"
             />
           </div>
-
           <button
             type="submit"
             class="w-full bg-brand-orange text-white py-2 rounded-lg font-semibold hover:bg-brand-neonPink transition-colors"
@@ -3859,7 +3961,6 @@
             Sign Up
           </button>
         </form>
-
         <div class="mt-4 text-center">
           <p class="text-gray-600 dark:text-gray-400">
             Already have an account?
@@ -3870,594 +3971,8 @@
         </div>
       </div>
     </div>
-
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100,
-        disable: window.innerWidth < 768, // Disable animations on mobile for performance
-      });
-
-      // Preloader
-      window.addEventListener("load", function () {
-        const preloader = document.getElementById("preloader");
-        setTimeout(() => {
-          preloader.classList.add("hidden");
-        }, 500);
-      });
-
-      // Set dark mode as default
-      if (!localStorage.getItem("theme")) {
-        localStorage.setItem("theme", "dark");
-        document.documentElement.classList.add("dark");
-        document.getElementById("themeIcon").className = "fas fa-moon";
-      }
-
-      // Theme Toggle
-      const themeToggle = document.getElementById("themeToggle");
-      const themeMenu = document.getElementById("themeMenu");
-      const themeIcon = document.getElementById("themeIcon");
-      const lightMode = document.getElementById("lightMode");
-      const darkMode = document.getElementById("darkMode");
-      const systemMode = document.getElementById("systemMode");
-
-      themeToggle.addEventListener("click", () => {
-        themeMenu.classList.toggle("hidden");
-      });
-
-      // Close theme menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!themeToggle.contains(e.target) && !themeMenu.contains(e.target)) {
-          themeMenu.classList.add("hidden");
-        }
-      });
-
-      lightMode.addEventListener("click", () => {
-        document.documentElement.classList.remove("dark");
-        themeIcon.className = "fas fa-sun";
-        themeMenu.classList.add("hidden");
-        localStorage.setItem("theme", "light");
-      });
-
-      darkMode.addEventListener("click", () => {
-        document.documentElement.classList.add("dark");
-        themeIcon.className = "fas fa-moon";
-        themeMenu.classList.add("hidden");
-        localStorage.setItem("theme", "dark");
-      });
-
-      systemMode.addEventListener("click", () => {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.classList.add("dark");
-          themeIcon.className = "fas fa-moon";
-        } else {
-          document.documentElement.classList.remove("dark");
-          themeIcon.className = "fas fa-sun";
-        }
-        themeMenu.classList.add("hidden");
-        localStorage.setItem("theme", "system");
-      });
-
-      // Check for saved theme preference
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-        themeIcon.className = "fas fa-moon";
-      } else if (localStorage.getItem("theme") === "light") {
-        document.documentElement.classList.remove("dark");
-        themeIcon.className = "fas fa-sun";
-      } else if (localStorage.getItem("theme") === "system") {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.classList.add("dark");
-          themeIcon.className = "fas fa-moon";
-        } else {
-          document.documentElement.classList.remove("dark");
-          themeIcon.className = "fas fa-sun";
-        }
-      }
-
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-      const mobileMenuClose = document.getElementById("mobileMenuClose");
-      const menuIcon = document.getElementById("menuIcon");
-
-      function openMobileMenu() {
-        mobileMenu.classList.add("active");
-        mobileMenuOverlay.classList.add("active");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-        menuIcon.className =
-          "fas fa-times text-2xl transition-transform duration-300";
-        mobileMenuBtn.setAttribute("aria-expanded", "true");
-      }
-
-      function closeMobileMenu() {
-        mobileMenu.classList.remove("active");
-        mobileMenuOverlay.classList.remove("active");
-        document.body.style.overflow = ""; // Restore scrolling
-        menuIcon.className =
-          "fas fa-bars text-2xl transition-transform duration-300";
-        mobileMenuBtn.setAttribute("aria-expanded", "false");
-      }
-
-      mobileMenuBtn.addEventListener("click", () => {
-        if (mobileMenu.classList.contains("active")) {
-          closeMobileMenu();
-        } else {
-          openMobileMenu();
-        }
-      });
-
-      mobileMenuClose.addEventListener("click", closeMobileMenu);
-      mobileMenuOverlay.addEventListener("click", closeMobileMenu);
-
-      // Close mobile menu when clicking on a link
-      const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
-      mobileNavLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          closeMobileMenu();
-        });
-      });
-
-      // Service Tabs
-      const serviceTabs = document.querySelectorAll(".service-tab");
-      const serviceCardItems = document.querySelectorAll(".service-card-item");
-
-      serviceTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          // Remove active class from all tabs
-          serviceTabs.forEach((t) => {
-            t.classList.remove("active", "bg-brand-orange", "text-white");
-            t.classList.add("text-gray-700", "dark:text-gray-300");
-          });
-
-          // Add active class to clicked tab
-          tab.classList.add("active", "bg-brand-orange", "text-white");
-          tab.classList.remove("text-gray-700", "dark:text-gray-300");
-
-          // Get the service category
-          const service = tab.getAttribute("data-service");
-
-          // Show/hide service cards based on category
-          serviceCardItems.forEach((card) => {
-            if (
-              service === "all" ||
-              card.getAttribute("data-category") === service
-            ) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Testimonial Carousel
-      const testimonialContainer = document.getElementById(
-        "testimonialContainer"
-      );
-      const prevTestimonial = document.getElementById("prevTestimonial");
-      const nextTestimonial = document.getElementById("nextTestimonial");
-      const testimonialDots = document.querySelectorAll(".dot");
-      const testimonialProgress = document.getElementById(
-        "testimonialProgress"
-      );
-      let currentTestimonial = 0;
-      const totalTestimonials = 3; // Number of testimonial pages
-      let autoPlayInterval;
-
-      function showTestimonial(index) {
-        // Calculate the translateX based on screen size
-        const isMobile = window.innerWidth < 768;
-        const translateX = isMobile ? -index * 100 : -index * (100 / 3);
-        testimonialContainer.style.transform = `translateX(${translateX}%)`;
-
-        // Update dots
-        testimonialDots.forEach((dot, i) => {
-          if (i === index) {
-            dot.classList.add("bg-brand-orange");
-            dot.classList.remove("bg-gray-300");
-          } else {
-            dot.classList.remove("bg-brand-orange");
-            dot.classList.add("bg-gray-300");
-          }
-        });
-
-        // Reset progress bar
-        testimonialProgress.style.width = "0%";
-
-        // Clear and restart autoplay
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-      }
-
-      function nextSlide() {
-        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-        showTestimonial(currentTestimonial);
-      }
-
-      function prevSlide() {
-        currentTestimonial =
-          (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-        showTestimonial(currentTestimonial);
-      }
-
-      function startAutoPlay() {
-        let progress = 0;
-        const progressInterval = setInterval(() => {
-          progress += 2;
-          testimonialProgress.style.width = `${progress}%`;
-          if (progress >= 100) {
-            clearInterval(progressInterval);
-            nextSlide();
-          }
-        }, 50);
-
-        autoPlayInterval = setInterval(() => {
-          nextSlide();
-        }, 5000);
-      }
-
-      prevTestimonial.addEventListener("click", prevSlide);
-      nextTestimonial.addEventListener("click", nextSlide);
-
-      testimonialDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          currentTestimonial = index;
-          showTestimonial(currentTestimonial);
-        });
-      });
-
-      // Start autoplay on page load
-      startAutoPlay();
-
-      // Pause autoplay on hover
-      testimonialContainer.addEventListener("mouseenter", () => {
-        clearInterval(autoPlayInterval);
-      });
-
-      testimonialContainer.addEventListener("mouseleave", () => {
-        startAutoPlay();
-      });
-
-      // Process Steps Animation
-      const processSteps = document.querySelectorAll(".process-step");
-      const progressBar = document.getElementById("progressBar");
-
-      // Function to check if element is in viewport
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <=
-            (window.innerWidth || document.documentElement.clientWidth)
-        );
-      }
-
-      // Animate progress bar when process section is in view
-      function animateProcessSteps() {
-        let processInView = false;
-        processSteps.forEach((step) => {
-          if (isInViewport(step) && !processInView) {
-            processInView = true;
-            const stepNumber = parseInt(step.getAttribute("data-step"));
-            const progressHeight = (stepNumber / processSteps.length) * 100;
-            progressBar.style.height = `${progressHeight}%`;
-          }
-        });
-      }
-
-      // Check on scroll with throttling for performance
-      let scrollTimeout;
-      window.addEventListener("scroll", () => {
-        if (scrollTimeout) {
-          window.cancelAnimationFrame(scrollTimeout);
-        }
-
-        scrollTimeout = window.requestAnimationFrame(() => {
-          animateProcessSteps();
-
-          // Back to top button visibility
-          const backToTop = document.getElementById("backToTop");
-          if (window.pageYOffset > 300) {
-            backToTop.classList.remove("opacity-0", "invisible");
-            backToTop.classList.add("opacity-100", "visible");
-          } else {
-            backToTop.classList.add("opacity-0", "invisible");
-            backToTop.classList.remove("opacity-100", "visible");
-          }
-        });
-      });
-
-      // Initial check
-      animateProcessSteps();
-
-      // Contact Form
-      const contactForm = document.getElementById("contactForm");
-      const submitBtn = document.getElementById("submitBtn");
-      const btnText = document.getElementById("btnText");
-      const btnIcon = document.getElementById("btnIcon");
-      const successMessage = document.getElementById("successMessage");
-
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Show loading state
-        btnText.textContent = "Sending...";
-        btnIcon.className = "fas fa-spinner fa-spin ml-2";
-        submitBtn.disabled = true;
-
-        // Simulate form submission
-        setTimeout(() => {
-          // Reset form
-          contactForm.reset();
-
-          // Show success message
-          successMessage.classList.remove("hidden");
-
-          // Reset button
-          btnText.textContent = "Send";
-          btnIcon.className = "fas fa-paper-plane ml-2";
-          submitBtn.disabled = false;
-
-          // Hide success message after 5 seconds
-          setTimeout(() => {
-            successMessage.classList.add("hidden");
-          }, 5000);
-        }, 2000);
-      });
-
-      // Newsletter Form
-      function subscribeNewsletter() {
-        const email = document.getElementById("newsletterEmail").value;
-        if (email) {
-          // Show success message
-          const successDiv = document.createElement("div");
-          successDiv.className = "mt-2 text-green-500 text-sm";
-          successDiv.textContent = "Thank you for subscribing!";
-          document
-            .getElementById("newsletterEmail")
-            .parentNode.appendChild(successDiv);
-
-          // Reset input
-          document.getElementById("newsletterEmail").value = "";
-
-          // Remove success message after 3 seconds
-          setTimeout(() => {
-            successDiv.remove();
-          }, 3000);
-        }
-      }
-
-      // Back to Top Button
-      const backToTop = document.getElementById("backToTop");
-      backToTop.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Open Map Function
-      function openMap() {
-        // In a real implementation, this would open a map modal or redirect to a map page
-        // For now, we'll simulate it with a modal
-        const mapModal = document.createElement("div");
-        mapModal.className =
-          "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
-        mapModal.innerHTML = `
-        <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 dark:bg-brand-dark optimized-border">
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="text-xl font-bold dark:text-brand-light">Our Location</h3>
-            <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center dark:bg-gray-700">
-            <p class="text-gray-500 dark:text-gray-400">Map would be displayed here</p>
-          </div>
-          <div class="mt-4">
-            <p class="dark:text-gray-300"><strong>Address:</strong> Baia, Paba, Rajshahi</p>
-            <p class="dark:text-gray-300"><strong>Phone:</strong> +880 1712-345678</p>
-            <p class="dark:text-gray-300"><strong>Email:</strong> info@exzazon.com</p>
-          </div>
-        </div>
-      `;
-        document.body.appendChild(mapModal);
-      }
-
-      // Signup Modal
-      function showSignupModal() {
-        document.getElementById("signupModal").classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-      }
-
-      function closeSignupModal() {
-        document.getElementById("signupModal").classList.add("hidden");
-        document.body.style.overflow = ""; // Restore scrolling
-      }
-
-      // Signup Form
-      const signupForm = document.getElementById("signupForm");
-      signupForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Show success message
-        const successDiv = document.createElement("div");
-        successDiv.className =
-          "mt-4 p-3 bg-green-100 text-green-700 rounded-lg";
-        successDiv.textContent = "Signup successful! We will contact you soon.";
-        signupForm.appendChild(successDiv);
-
-        // Reset form
-        signupForm.reset();
-
-        // Close modal after 2 seconds
-        setTimeout(() => {
-          closeSignupModal();
-        }, 2000);
-      });
-
-      // Close modal when clicking outside
-      document.getElementById("signupModal").addEventListener("click", (e) => {
-        if (e.target.id === "signupModal") {
-          closeSignupModal();
-        }
-      });
-
-      // FAQ Toggle Function
-      function toggleFAQ(element) {
-        const answer = element.nextElementSibling;
-        const icon = element.querySelector(".faq-icon");
-
-        answer.classList.toggle("hidden");
-        icon.classList.toggle("active");
-      }
-
-      // Theme Change Function
-      function changeTheme(themeName) {
-        // Remove active class from all theme buttons
-        document.querySelectorAll(".theme-btn").forEach((btn) => {
-          btn.classList.remove("active");
-        });
-
-        // Add active class to selected theme button
-        document.querySelector(`.theme-${themeName}`).classList.add("active");
-
-        // Update CSS variables based on selected theme
-        if (themeName === "orange") {
-          document.documentElement.style.setProperty(
-            "--theme-accent",
-            "#f97316"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary",
-            "#3b82f6"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-accent-rgb",
-            "249, 115, 22"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary-rgb",
-            "59, 130, 246"
-          );
-        } else if (themeName === "green") {
-          document.documentElement.style.setProperty(
-            "--theme-accent",
-            "#10b981"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary",
-            "#14b8a6"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-accent-rgb",
-            "16, 185, 129"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary-rgb",
-            "20, 184, 166"
-          );
-        } else if (themeName === "purple") {
-          document.documentElement.style.setProperty(
-            "--theme-accent",
-            "#8b5cf6"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary",
-            "#ec4899"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-accent-rgb",
-            "139, 92, 246"
-          );
-          document.documentElement.style.setProperty(
-            "--theme-secondary-rgb",
-            "236, 72, 153"
-          );
-        }
-
-        // Store theme preference
-        localStorage.setItem("selectedTheme", themeName);
-      }
-
-      // Add click event listeners to theme buttons
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".theme-btn").forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const themeName = this.classList[1]; // Get theme name from class
-            changeTheme(themeName);
-          });
-        });
-
-        // Load saved theme on page load
-        const savedTheme = localStorage.getItem("selectedTheme");
-        if (savedTheme) {
-          changeTheme(savedTheme);
-        } else {
-          changeTheme("orange"); // Default theme
-        }
-      });
-
-      // Add intersection observer for animations
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-          }
-        });
-      }, observerOptions);
-
-      // Observe all sections
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
-
-      // Handle window resize for responsive testimonial carousel
-      let resizeTimeout;
-      window.addEventListener("resize", () => {
-        if (resizeTimeout) {
-          window.cancelAnimationFrame(resizeTimeout);
-        }
-
-        resizeTimeout = window.requestAnimationFrame(() => {
-          // Reset testimonial position on resize
-          showTestimonial(currentTestimonial);
-        });
-      });
-
-      // Performance optimization: Lazy load images
-      if ("IntersectionObserver" in window) {
-        const imgObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src;
-              img.classList.remove("lazy");
-              imgObserver.unobserve(img);
-            }
-          });
-        });
-
-        document.querySelectorAll("img.lazy").forEach((img) => {
-          imgObserver.observe(img);
-        });
-      }
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
